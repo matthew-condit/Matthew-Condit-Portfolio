@@ -10,7 +10,7 @@ a {
 	background-image: url('../images/Boston_reflection.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 1000px;
+	height: 850px;
 	width: 100%;
 }
 
@@ -33,6 +33,18 @@ a {
 	font-family: 'Lato', sans-serif;
 }
 
+.contact-wrapper {
+	font-size: 30px;
+	float: left;
+	width: 100%;
+	background-color: #333333;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	padding: 10px;
+}
+
+.left {text-align: left;}
+.right {text-align:right;}
 
 .nav {
 	margin:0;
