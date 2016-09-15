@@ -27,8 +27,11 @@ a {
   padding: 5px;
   font-size: 30px;
   text-align: center;
+  height: 100%;
   color: white;
   font-family: "Titillium Web", sans-serif; }
+  .nav-item:hover {
+    background-color: #191919; }
 
 .row {
   margin: 0; }
@@ -121,6 +124,8 @@ a {
     font-size: 40px; }
   .resume h4 {
     font-size: 30px; }
+  .resume h5 {
+    font-size: 24px; }
   .resume p {
     font-size: 20px; }
 
