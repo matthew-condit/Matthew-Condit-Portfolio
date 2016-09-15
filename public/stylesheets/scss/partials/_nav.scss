@@ -1,0 +1,21 @@
+/* Nav Partial Styles */
+
+.nav {
+  margin: 0;
+  padding: 20px;
+  float: left;
+  background-color: black;
+  width: 100%;
+}
+
+.nav-item {
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  font-family: $para-font;
+}
+
+.row {
+  margin: 0;
+}

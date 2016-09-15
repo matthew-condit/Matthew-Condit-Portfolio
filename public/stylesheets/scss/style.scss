@@ -1,0 +1,39 @@
+$title-font: 'Lato', serif;
+$para-font:'Titillium Web', sans-serif;
+
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+@import './partials/nav';
+@import './partials/splash';
+@import './partials/resume';
+@import './partials/footer';
+
+
+
+
+
