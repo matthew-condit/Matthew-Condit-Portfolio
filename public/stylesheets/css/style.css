@@ -129,6 +129,22 @@ a {
   .resume p {
     font-size: 20px; }
 
+/* About Page Styles */
+.about {
+  font-family: "Lato", serif; }
+
+.description {
+  margin: 20px; }
+  .description p {
+    font-size: 25px;
+    font-weight: 700; }
+  .description code {
+    font-size: 25px; }
+
+.picture img {
+  float: right;
+  width: 50%; }
+
 /* Contact footer Partial Style */
 .contact {
   font-size: 20px;
