@@ -15,5 +15,13 @@
 
 .picture img {
 	float: right;
-	width: 50%;
+	width: 40%;
+    max-width: 500px;
+}
+
+.pro-pic {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
 }
