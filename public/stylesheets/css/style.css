@@ -145,6 +145,23 @@ a {
   float: right;
   width: 50%; }
 
+.works {
+  font-family: "Lato", serif;
+  font-weight: 700; }
+  .works h2 {
+    font-size: 40px; }
+  .works iframe {
+    height: 400px;
+    width: 40%; }
+
+.work {
+  margin-top: 80px;
+  padding: 30px; }
+  .work img {
+    height: 50%;
+    width: 50%;
+    border: 2px solid black; }
+
 /* Contact footer Partial Style */
 .contact {
   font-size: 20px;
