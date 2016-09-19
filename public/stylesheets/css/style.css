@@ -183,4 +183,25 @@ a {
     .contact a:hover {
       color: white; }
 
+.countdown {
+  height: 90%;
+  background: url("../../images/bonfire.jpg"); }
+  .countdown h1 {
+    text-align: center;
+    font-family: "Lato", serif;
+    font-size: 50px; }
+
+.count {
+  background: rgba(255, 255, 255, 0.4);
+  border: 10px solid #2F4F4F;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 50px;
+  margin: 50px;
+  width: 200px;
+  text-align: center; }
+
+.num {
+  font-size: 80px; }
+
 /*# sourceMappingURL=style.css.map */

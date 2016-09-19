@@ -1,0 +1,30 @@
+.countdown {
+    height: 90%;
+    background: url('../../images/bonfire.jpg');
+    h1 {
+        text-align: center;
+        font-family: $title-font;
+        font-size: 50px;
+    }
+}
+
+
+
+#clockdiv {
+
+}
+
+.count {
+    background: rgba(255, 255, 255, 0.4);
+    border: 10px solid #2F4F4F;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 50px;
+    margin: 50px;
+    width:200px;
+    text-align: center;
+}
+
+.num {
+    font-size: 80px;
+}
