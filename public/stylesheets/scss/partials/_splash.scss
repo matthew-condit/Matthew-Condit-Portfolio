@@ -1,10 +1,8 @@
 /* Index Splash  Styles */
 
 .splash {
-	@media (max-width: 2100px) and (min-width: 760px){
-  		background-image: url("../../images/Boston_reflection.jpg");
-  		height: 100%;
-  	}
+	background-image: url("../../images/Boston_reflection.jpg");
+	height: 100%;
   	@media (max-width:767px) {
   		background-image: url('../../images/mobile-image.jpg');
   		height: 100%;

@@ -38,13 +38,11 @@ a {
 
 /* Index Splash  Styles */
 .splash {
+  background-image: url("../../images/Boston_reflection.jpg");
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%; }
-  @media (max-width: 2100px) and (min-width: 760px) {
-    .splash {
-      background-image: url("../../images/Boston_reflection.jpg");
-      height: 100%; } }
   @media (max-width: 767px) {
     .splash {
       background-image: url("../../images/mobile-image.jpg");
@@ -185,7 +183,8 @@ a {
 
 .countdown {
   height: 90%;
-  background: url("../../images/bonfire.jpg"); }
+  background: url("../../images/bonfire.jpg") no-repeat;
+  background-size: cover; }
   .countdown h1 {
     text-align: center;
     font-family: "Lato", serif;
@@ -193,12 +192,12 @@ a {
 
 .count {
   background: rgba(255, 255, 255, 0.4);
-  border: 10px solid #2F4F4F;
-  border-radius: 5px;
+  border: 10px solid #555555;
+  border-radius: 10px;
   display: inline-block;
   padding: 50px;
   margin: 30px;
-  width: 180px;
+  width: 20%;
   text-align: center; }
 
 .num {
