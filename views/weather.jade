@@ -1,0 +1,16 @@
+extends layout
+block content 
+  .weather
+    #graph
+      #info
+        #keys
+          p 
+            span.key-text Temperature
+            span.key#temp-key
+          p
+            span.key-text Rainfall
+            span.key#rain-key
+        #current-data
+          h2
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    script(src='/javascripts/weather-app.js')

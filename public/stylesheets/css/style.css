@@ -203,4 +203,106 @@ a {
 .num {
   font-size: 80px; }
 
+.weather {
+  /* HTML5 display-role reset for older browsers */
+  /* Custom Styles */ }
+  .weather html, .weather body, .weather div, .weather span, .weather applet, .weather object, .weather iframe,
+  .weather h1, .weather h2, .weather h3, .weather h4, .weather h5, .weather h6, .weather p, .weather blockquote, .weather pre,
+  .weather a, .weather abbr, .weather acronym, .weather address, .weather big, .weather cite, .weather code,
+  .weather del, .weather dfn, .weather em, .weather img, .weather ins, .weather kbd, .weather q, .weather s, .weather samp,
+  .weather small, .weather strike, .weather strong, .weather sub, .weather sup, .weather tt, .weather var,
+  .weather b, .weather u, .weather i, .weather center,
+  .weather dl, .weather dt, .weather dd, .weather ol, .weather ul, .weather li,
+  .weather fieldset, .weather form, .weather label, .weather legend,
+  .weather table, .weather caption, .weather tbody, .weather tfoot, .weather thead, .weather tr, .weather th, .weather td,
+  .weather article, .weather aside, .weather canvas, .weather details, .weather embed,
+  .weather figure, .weather figcaption, .weather footer, .weather header, .weather hgroup,
+  .weather menu, .weather nav, .weather output, .weather ruby, .weather section, .weather summary,
+  .weather time, .weather mark, .weather audio, .weather video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+  .weather article, .weather aside, .weather details, .weather figcaption, .weather figure,
+  .weather footer, .weather header, .weather hgroup, .weather menu, .weather nav, .weather section {
+    display: block; }
+  .weather body {
+    line-height: 1; }
+  .weather ol, .weather ul {
+    list-style: none; }
+  .weather blockquote, .weather q {
+    quotes: none; }
+  .weather blockquote:before, .weather blockquote:after,
+  .weather q:before, .weather q:after {
+    content: '';
+    content: none; }
+  .weather table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  .weather body {
+    background: #edf5f4;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  .weather header {
+    background: #58bbb3;
+    background: -moz-linear-gradient(left, #58bbb3 0%, #40adcf 100%);
+    background: -webkit-linear-gradient(left, #58bbb3 0%, #40adcf 100%);
+    background: -o-linear-gradient(left, #58bbb3 0%, #40adcf 100%);
+    background: -ms-linear-gradient(left, #58bbb3 0%, #40adcf 100%);
+    background: linear-gradient(left, #58bbb3 0%, #40adcf 100%);
+    height: 84px;
+    line-height: 84px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); }
+  .weather header h1 {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1); }
+  .weather p {
+    margin: 10 auto; }
+  .weather #graph {
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); }
+  .weather #graph #info {
+    text-align: right; }
+  .weather #graph #info #keys .key {
+    padding: 10px;
+    display: inline-block; }
+  .weather #info {
+    color: #555; }
+  .weather #info #keys .key-text {
+    vertical-align: super; }
+  .weather #graph .bars line {
+    stroke: #95cddf;
+    stroke-width: 2px; }
+  .weather #graph .tick line {
+    stroke: #ccc;
+    stroke-width: 1px; }
+  .weather #graph .axis path {
+    stroke-width: 1px;
+    stroke: #ccc;
+    fill: none; }
+  .weather #graph path#rain-line {
+    fill: none;
+    stroke: #cc627a;
+    stroke-width: 0.5; }
+  .weather #graph line#cursor {
+    stroke-width: 1.5px;
+    stroke: #555;
+    fill: none;
+    opacity: 0.7; }
+  .weather #graph text {
+    fill: #aaa; }
+  .weather #graph text.label {
+    font-weight: bold;
+    color: #555; }
+
 /*# sourceMappingURL=style.css.map */
