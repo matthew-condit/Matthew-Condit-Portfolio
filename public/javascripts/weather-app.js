@@ -64,7 +64,7 @@
             .style('background', '#cc627a');
 
 
-        d3.csv('climate_data.csv', function(data) {
+        d3.csv(, function(data) {
 
 
             // find min and max of data set
