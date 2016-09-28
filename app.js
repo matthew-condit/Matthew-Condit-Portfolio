@@ -16,6 +16,7 @@ var weather = require('./routes/weather');
 
 var app = express();
 
+var router = express.Router();
 
 
 // view engine setup
