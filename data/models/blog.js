@@ -2,16 +2,18 @@
 
 var mongoose = require('mongoose');
 
-// todo.name
-// todo.completed
-
 var blogSchema = new mongoose.Schema({
 	title: String,
-	author: user
+	author: mongoose.Schema.ObjectId,
+  body: String,
+  comments: [{body: String, date: Date}],
+  date: {type:Date, default: Date.now},
+  hidden: Boolean,
+  likes : {num: Number, users: mongoose.Schema.ObjectId}
 });
 
 var authorSchema = new mongoose.Schema({});
 
-var model = mongoose.model('Todo', todoSchema);
+var model = mongoose.model('Blog', blogSchema);
 
 module.exports = model;
