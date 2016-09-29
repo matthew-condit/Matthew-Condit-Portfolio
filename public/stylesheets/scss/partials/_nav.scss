@@ -1,25 +1,4 @@
 /* Nav Partial Styles */
-
-.nav {
-  margin: 0;
-  padding: 20px;
-  float: left;
-  background-color: black;
-  width: 100%;
-}
-
-.nav-item {
-  padding: 5px;
-  font-size: 30px;
-  text-align: center;
-  height: 100%;
-  color: white;
-  font-family: $para-font;
-  &:hover {
-    background-color: rgba(25, 25, 25, 1);
-  }
-}
-
-.row {
-  margin: 0;
+.nav * {
+  font-weight: 700;
 }

@@ -1,22 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+var request = require('request');
+var api = require('../api');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var blogPosts = [    {title: "cool",
-    body: "woopeeeee"},
-    {title: "cool",
-    body: "woopeeeee"}
-  ];
-  res.render('blog', {title: 'Blog Posting Time!'}, {posts: blogPosts});
+
+  res.render('blog/blog', {title: 'Blog Posting Time!'});
 });
 
-router.get('', function(req, res, next) {
-  var blogPost = {
-    title: "cool",
-    body: "woopeeeee"
-  };
-  res.render('post', {title: "Blog Title", post: blogPost})
-})
 
 module.exports = router;
