@@ -6,12 +6,52 @@ var User = require('../data/models/user');
 
 var router = express.Router();
 
-router.get('/blog', function(req, res) {
+router.get('/users', function(req, res) {
   User.find({}, function(err, users) {
     if (err) {
       return res.status(500).json({ message: err.message });
     }
-    res.json({ posts: users });
+    res.json({ users: users });
+  });
+});
+
+router.get('/user/:id', function(req, res) {
+  var id = req.params.id;
+  console.log(id);
+  Blog.find({}, function(err, blogs){
+    for (var b in blogs) {console.log(b.author);}
+  });
+  User.findOne({_id: id}, function(err, user) {
+    if (err) {
+      return res.status(500).json({message: err.message});
+    }
+    Blog.find({author: user._id}, function(err, blogs){
+      console.log(err);
+      res.json({user: user, blogs: blogs});
+    });
+
+  });
+});
+
+router.get('/blogs', function(req, res) {
+  Blog.find({}, function(err, blogs) {
+    if (err) {
+      return res.status(500).json({ message: err.message });
+    }
+    res.json({ blogs: blogs });
+  });
+});
+
+router.get('/blog/:id', function(req, res) {
+  var id = req.params.id;
+  Blog.findOne({_id: id}, function(err, blog) {
+    if (err) {
+      return res.status(500).json({message: err.message});
+    }
+    User.find({_id: blog.author}, function(err, author){
+      console.log(author);
+      res.json({blog: blog, author: author});
+    });
   });
 });
 

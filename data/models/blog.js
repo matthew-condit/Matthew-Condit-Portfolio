@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 var blogSchema = new mongoose.Schema({
 	title: String,
-	author: mongoose.Schema.ObjectId,
+	author: {type: mongoose.Schema.ObjectId, ref: 'User'},
   body: String,
   comments: [{body: String, date: Date}],
   date: {type:Date, default: Date.now},
