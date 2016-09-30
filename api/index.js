@@ -17,10 +17,6 @@ router.get('/users', function(req, res) {
 
 router.get('/user/:id', function(req, res) {
   var id = req.params.id;
-  console.log(id);
-  Blog.find({}, function(err, blogs){
-    for (var b in blogs) {console.log(b.author);}
-  });
   User.findOne({_id: id}, function(err, user) {
     if (err) {
       return res.status(500).json({message: err.message});

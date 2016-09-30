@@ -6,10 +6,7 @@ $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
+
 
 a {
   color: inherit;
@@ -36,7 +33,3 @@ a {
 @import './partials/footer';
 @import './partials/countdown';
 @import './partials/weather';
-
-
-
-
