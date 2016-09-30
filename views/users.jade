@@ -7,7 +7,6 @@ block content
       .blog-header(ng-repeat='blog in blogs')
         a(ng-href='/blog/{{blog._id}}')
           h2 {{blog.title}}
+          h3 {{blog._id}}
           h3 Written by {{blog.author}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
           h6 (Like symbol) {{blog.likes.num}}
-          
-  

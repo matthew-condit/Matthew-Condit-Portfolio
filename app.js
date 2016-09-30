@@ -14,6 +14,7 @@ var works = require('./routes/works');
 var countdown = require('./routes/countdown');
 var weather = require('./routes/weather');
 var blog = require('./routes/blog');
+var user = require('./routes/user');
 var router = require('./api');
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/works', works);
 app.use('/countdown', countdown);
 app.use('/weather', weather);
 app.use('/blog', blog);
+app.use('/users', user);
 app.use('/api', router);
 
 // catch 404 and forward to error handler

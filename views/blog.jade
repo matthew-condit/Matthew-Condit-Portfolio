@@ -1,10 +1,14 @@
 extends layout 
 
 block content
-  script(src='javascripts/blog/blog.js')
-  .blog(ng-cloak ng-app='blogApp' style='height: 100%')
-    .list(ng-controller='blogCtrl')
-        h2 {{blog.title}}
-        h3 {{blog._id}}
-        h3 Written by {{blog.author}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
+  script(src='../javascripts/blog/blog.js')
+  a(href="/blog") Go back to all blogs
+  .row
+    .col-sm-2.col-md-3
+    .col-sm-8.col-md-6(ng-cloak ng-app='singleBlogApp' style='height: 100%')
+      .div(ng-controller='blogCtrl')
+        h1 {{blog.title}}
+        h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
         h6 (Like symbol) {{blog.likes.num}}
+        p {{blog.body}}
+    .col-sm-2.col-md-3
