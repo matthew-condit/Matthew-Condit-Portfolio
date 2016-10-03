@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mailer = require('express-mailer');
 var sitemap = require('express-sitemap')();
 
 var routes = require('./routes/index');
@@ -16,6 +17,7 @@ var weather = require('./routes/weather');
 var blog = require('./routes/blog');
 var user = require('./routes/user');
 var router = require('./api');
+var email = require('./routes/sendEmail');
 var app = express();
 
 require('./data/database');
@@ -41,6 +43,7 @@ app.use('/countdown', countdown);
 app.use('/weather', weather);
 app.use('/blog', blog);
 app.use('/users', user);
+app.use('/sendEmail', email);
 app.use('/api', router);
 
 // catch 404 and forward to error handler

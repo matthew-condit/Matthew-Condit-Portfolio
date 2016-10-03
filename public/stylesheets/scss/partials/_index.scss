@@ -1,8 +1,9 @@
 /* Intro div stylings */
 .intro {
-  padding: 20px;
   background-color: #f6f6f6;
+  margin: 0;
   .intro-content{
+    padding: 20px;
     h1 {
       font-family: $title-font;
     }
@@ -10,6 +11,9 @@
       font-family: $para-font;
       font-size: 20px;
     }
+  }
+  .intro-sidebar {
+    padding: 0;
   }
   .intro-pic {
     width: 100%;
@@ -41,5 +45,9 @@
   .contact {
     width: 60%;
     margin: 0 auto;
+    #description {
+      height: 150px;
+      margin-bottom: 20px;
+    }
   }
 }

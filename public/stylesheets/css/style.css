@@ -20,13 +20,17 @@ a {
 
 /* Intro div stylings */
 .intro {
-  padding: 20px;
-  background-color: #f6f6f6; }
-  .intro .intro-content h1 {
-    font-family: "Nobile", sans-serif; }
-  .intro .intro-content p {
-    font-family: "Roboto Slab", serif;
-    font-size: 20px; }
+  background-color: #f6f6f6;
+  margin: 0; }
+  .intro .intro-content {
+    padding: 20px; }
+    .intro .intro-content h1 {
+      font-family: "Nobile", sans-serif; }
+    .intro .intro-content p {
+      font-family: "Roboto Slab", serif;
+      font-size: 20px; }
+  .intro .intro-sidebar {
+    padding: 0; }
   .intro .intro-pic {
     width: 100%;
     background-color: #f6f6f6;
@@ -50,8 +54,13 @@ a {
   .contact-wrapper .contact {
     width: 60%;
     margin: 0 auto; }
+    .contact-wrapper .contact #description {
+      height: 150px;
+      margin-bottom: 20px; }
 
 .resume {
+  width: 80%;
+  margin: 0 auto;
   padding: 30px;
   font-family: "Nobile", sans-serif;
   font-weight: 700; }
@@ -71,9 +80,11 @@ a {
 /* About Page Styles */
 .about {
   font-family: "Nobile", sans-serif; }
+  .about .row {
+    margin: 0; }
 
 .description {
-  margin: 20px; }
+  padding: 20px; }
   .description p {
     font-size: 25px;
     font-weight: 700; }
@@ -81,15 +92,8 @@ a {
     font-size: 25px; }
 
 .picture img {
-  float: right;
-  width: 40%;
+  width: 100%;
   max-width: 500px; }
-
-.pro-pic {
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%; }
 
 .works {
   font-family: "Nobile", sans-serif;
@@ -104,8 +108,7 @@ a {
   margin-top: 80px;
   padding: 30px; }
   .work img {
-    height: 50%;
-    width: 50%;
+    width: 100%;
     border: 2px solid black; }
 
 /* Contact footer Partial Style */

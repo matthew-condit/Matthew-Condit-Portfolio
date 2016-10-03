@@ -1,9 +1,12 @@
 /* About Page Styles */
 .about {
 	font-family: $title-font;
+	.row {
+		margin: 0;
+	}
 }
 .description {
-	margin: 20px;
+	padding: 20px;
 	p {
 		font-size: 25px;
 		font-weight: 700;
@@ -14,14 +17,6 @@
 }
 
 .picture img {
-	float: right;
-	width: 40%;
+	width: 100%;
     max-width: 500px;
-}
-
-.pro-pic {
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
 }
