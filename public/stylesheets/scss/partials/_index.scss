@@ -1,0 +1,45 @@
+/* Intro div stylings */
+.intro {
+  padding: 20px;
+  background-color: #f6f6f6;
+  .intro-content{
+    h1 {
+      font-family: $title-font;
+    }
+    p {
+      font-family: $para-font;
+      font-size: 20px;
+    }
+  }
+  .intro-pic {
+    width: 100%;
+    background-color:  #f6f6f6;
+    padding: 0;
+  }
+}
+
+.skills {
+  padding: 20px;
+  background-color: #ddd;
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      border: 4px solid #00aced;
+      padding: 20px;
+      margin: 10px;
+      font-family: $title-font;
+
+    }
+  }
+
+}
+
+.contact-wrapper {
+  background-color: white;
+  padding: 20px;
+  .contact {
+    width: 60%;
+    margin: 0 auto;
+  }
+}

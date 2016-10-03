@@ -1,5 +1,63 @@
 extends layout
 
 block content
-  h1 Matthew Condit 
-  h2 Web Application Developer
+  .row.intro 
+    .intro-content.col-xs-12.col-sm-8
+      h1 Hello, my name is Matt Condit, and I'm a full-stack Web Developer in Boston. 
+      p I build functional, powerful web applications for the modern web.  I'm always learning new technologies and looking for new ways to use them. 
+      p In the past, I've worked on a very small startup team, I've been a one-man application development team, and I've taught coding to middle schoolers. 
+      p This website will have my most recent projects on it, so take a look around and see if there's anything that piques your interest.
+    .intro-sidebar.col-xs-12.col-sm-4
+      img.intro-pic(src='images/ProfessionalPicture-cutout.png', alt='My Picture')
+  .skills 
+    h2 Technologies and Skills 
+      h3 Frameworks 
+      ul
+        li MEAN Stack
+        li ASP.NET MVC 
+        li Ruby-on-Rails      
+      h3 Front End 
+      ul
+        li HTML5
+        li CSS3 
+        li SASS
+        li JavaScript
+        li JQuery
+        li Angular.js
+        li React.js
+        li D3.js
+        li Jade Rendering Engine
+      h3 Back-End
+      ul 
+        li Node.js
+        li Express.js
+        li MongoDB 
+        li Ruby 
+        li C# 
+        li mySQL 
+  .contact-wrapper
+    .contact
+      .contact-header
+        h1  Contact
+        h2 If you'd like to get in contact with me, send me an email below.
+      .contact-form 
+        form(action='/sendEmail', method='post')
+          fieldset(data-role='')
+            label(for='') Your Name
+            input(id='name', name='name', type='text', value='', placeholder='John Doe').form-control
+            br
+            label(for='email') Email Address:
+            input(id='email', name='email', type='text', value='', placeholder='John.Doe@example.com').form-control
+            br
+            label(for='location') Location:
+            input(id='location', name='location', type='text', value='', placeholder='Boston, MA').form-control
+            br
+            label(for='description') Your Email:
+            textarea(id='description', name='description').form-control
+            input(type='submit', , value='Send your Request').btn.btn-success
+  
+      
+      
+      
+  
+  

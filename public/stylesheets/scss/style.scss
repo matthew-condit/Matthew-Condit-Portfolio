@@ -1,12 +1,17 @@
-$title-font: 'Lato', serif;
-$para-font:'Titillium Web', sans-serif;
+$title-font: 'Nobile', sans-serif;;
+$para-font:'Roboto Slab', serif;
 
 $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
 
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font;
+}
+p {
+  font-family: $para-font;
+}
 
 a {
   color: inherit;
@@ -17,16 +22,9 @@ a {
   }
 }
 
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
 
 @import './partials/nav';
-@import './partials/splash';
+@import './partials/index';
 @import './partials/resume';
 @import './partials/about';
 @import './partials/works';
