@@ -1,37 +1,108 @@
 extends layout 
 
-block content 
-  .about
-    .row
-      .description.col-xs-12.col-sm-6
-        p In 2013, I wrote my first line of code.
-        code print("Hello, world!")
-        p I thought I was the next Bill Gates (Im still hoping I might have been right!)
-        p That was the moment my passion for programming started, and I didn't stop there. 
-
-      .picture.col-xs-12.col-sm-6
-        img(src="/images/Python.png", alt='Python Hello World')
+block content
+  //- .about
+  //-   .row
+  //-     .description.col-xs-12.col-sm-6
+  //-       p In 2013, I wrote my first line of code.
+  //-       code print("Hello, world!")
+  //-       p I thought I was the next Bill Gates (Im still hoping I might have been right!)
+  //-       p That was the moment my passion for programming started, and I didn't stop there. 
+  //- 
+  //-     .picture.col-xs-12.col-sm-6
+  //-       img(src="/images/Python.png", alt='Python Hello World')
+  //-   hr
+  //-   .row
+  //-     .description.col-xs-12.col-sm-6
+  //-       p Over the course of the next few years, I learned computer science and theory at Colgate University.  Most importantly, however, I gained social and communication experience and a diverse background in the arts to complement my technical knowledge.
+  //-     .picture.col-xs-12.col-sm-6
+  //-       img(src="/images/colgate.jpg", alt='Python Hello World')
+  //-   hr
+  //-   .row
+  //-     .description.col-xs-12.col-sm-6
+  //-       p While at Colgate, I found a passion for A Cappella.  It doesn't have anything to do with being a developer, but the Colgate Dischords were a big part of my life. It led me to join a post-collegiate A Cappella group in Boston called Collective Measures!
+  //-     .picture.col-xs-12.col-sm-6
+  //-       img(src='/images/about-dischords.jpg', alt='Dischords Post-Concert')
+  //-   hr
+  //-   .row
+  //-     .description.col-xs-12.col-sm-6  
+  //-       p After stumbling upon the wonderful world of programming, it feels like I've had a taste of about every possible aspect of programming possible.  I've learned quite a few different languages, from MIPS assembly language to haskell to javascript.  I really haven't stopped learning since I wrote that first line of Python, and I don't think that will change any time soon. 
+  //-     .picture.col-xs-12.col-sm-6 
+  //-       img(src='', alt='')
+  //-   hr
+  //-   .row
+  //-     .description.col-xs-12.col-sm-6  
+  //-       p 
+  //-     .picture.col-xs-12.col-sm-6 
+  //-       img(src='', alt='')
+  .about-wrapper
+    section.about
+      h1 About Me
+      p  I'm Matt Condit, and I'm a full-stack web developer in Somerville, Massachusetts.  I'm an avid coder, as well musician, hiker, and friend. 
+      p  Starting off in a Computer Science program at Colgate University, I learned the basics of programming.  This time at Colgate allowed me to develop a great theoretical foundation for web development. 
+      p  After taking summer jobs at ModusBox and Flatiron Schools, I started to realize a passion for web development.  It seemed like such a phenomenal platform for programming in a creative environment.  Even though my school didn't teach any web development, I began studying front-end design and web frameworks and soon knew that web development was for me. 
+      p  Fast forward to present day and I haven't stopped learning anything I can get my hands on.  I hope this feeling doesn't stop, because it's my avid desire to learn that drives my quick development.
+        
+        
+    section.about-skills
+      h3 Core Skills 
+      img(src='/images/skills/html5.png')
+      img(src='/images/skills/css.png')
+      img(src='/images/skills/js.png')
+      img(src='/images/skills/node.png')
+      img(src='/images/skills/csharp.png')
+      
+  section.timeline 
+    h2 A Brief History of Matt...
     hr
-    .row
-      .description.col-xs-12.col-sm-6
-        p Over the course of the next few years, I learned computer science and theory at Colgate University.  Most importantly, however, I gained social and communication experience and a diverse background in the arts to complement my technical knowledge.
-      .picture.col-xs-12.col-sm-6
-        img(src="/images/colgate.jpg", alt='Python Hello World')
-    hr
-    .row
-      .description.col-xs-12.col-sm-6
-        p While at Colgate, I found a passion for A Cappella.  It doesn't have anything to do with being a developer, but the Colgate Dischords were a big part of my life. It led me to join a post-collegiate A Cappella group in Boston called Collective Measures!
-      .picture.col-xs-12.col-sm-6
-        img(src='/images/about-dischords.jpg', alt='Dischords Post-Concert')
-    hr
-    .row
-      .description.col-xs-12.col-sm-6  
-        p After stumbling upon the wonderful world of programming, it feels like I've had a taste of about every possible aspect of programming possible.  I've learned quite a few different languages, from MIPS assembly language to haskell to javascript.  I really haven't stopped learning since I wrote that first line of Python, and I don't think that will change any time soon. 
-      .picture.col-xs-12.col-sm-6 
-        img(src='', alt='')
-    hr
-    .row
-      .description.col-xs-12.col-sm-6  
-        p 
-      .picture.col-xs-12.col-sm-6 
-        img(src='', alt='')
+    ul 
+      li 
+        div 
+          time September 1, 2013 
+          p I wrote my first line of code in Computer Science 101.
+          code print("Hello, world!")
+          p I thought I was the next Mark Zuckerberg (Im still hoping I might have been right!)
+          p That was the moment my passion for programming started, and I didn't stop there.
+      li 
+        div 
+          time September 10, 2013 
+          p  
+            | I joined 
+            a(href='http://www.ColgateDischords.weebly.com') the Colgate Dischords 
+            | a Cappella group.  I had the honor of building my first website for them, but more importantly, I learned invaluable leadership and teamwork skills while being a contributing member and Director of this diverse group.
+      li 
+        div 
+          time May 1, 2014
+          p After two semesters in the Computer Science program at Colgate, I was hooked.  I knew it would be my major, and I couldn't wait to learn more.  Unfortunately, after only doing it for a year, I didn't know where to start. 
+      li 
+        div 
+          time June 1, 2014
+          p My first summer of college, I was jobless.  I had very little experience in programming, but I didn't want to do anything else for the summer.  I also was too naive to realize that I didn't need a job in programming to learn more, a critically important lesson to learn. 
+      li 
+        div 
+          time July 1, 2014
+          p 
+            | Thankfully, 
+            a(href='http://www.modusbox.com/') ModusBox 
+            | took me under their wing during my first summer job hunt and let me be their Java Development Intern.  
+            | They were a young startup at the time, and almost all of the technology that we used was foreign to me at the time, but I learned as fast as possible to do what I could for the project. It was my first experience of what programming and web development could actually be like, and it was a lot of learning.  I loved it. 
+      li 
+        div 
+          time July 1, 2015
+          p 
+            | A year later, I found myself teaching at 
+            a(href='https://flatironschool.com/') Flatiron Schools in Boston 
+            | where, as a Summer Program Assistant, I aided in the web development education of over 50 middle school and high school students. 
+            | In a two week bootcamp, students would learn the basics of programming.
+            | They advanced up through more complex programming, HTML and CSS lessons, all the way to a full Ruby-on-Rails application.  Being able to instill the passion for programming in my students that I saw was inspiring, and is a reminder that every day of coding should be as fun as that first "Hello World!".
+      li 
+        div 
+          time Now 
+          p Currently, I'm working full-time as a Web Application Developer at Toxikon Corporation, primarily focusing on ASP.NET MVC Development.  I'm in the process of making the change to a MEAN Stack for any applications that the stack fits.  I'm a lone developer at a 200+ person pre-clinical pharmaceutical testing company, and it is definitely a unique expereience.  I teach myself something new every day, and hope to continue that trend into the future
+          
+    .arrow.animated.bounce#arrow
+      img(width="40", height="40" ,src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyDQoJbDE4OS45OTktMTkwYzIwLjE3OC0yMC4xNzgsNTMuMTY0LTE5LjkxMyw3My42NzIsMC41OTVsMCwwYzIwLjUwOCwyMC41MDksMjAuNzcyLDUzLjQ5MiwwLjU5NSw3My42NzFMMjkzLjc1MSw0NTUuODY4eiIvPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyMC4yNDksNDU1Ljg2OGMyMC4xOCwyMC4xNzksNTMuMTY0LDE5LjkxMyw3My42NzItMC41OTVsMCwwYzIwLjUwOS0yMC41MDgsMjAuNzc0LTUzLjQ5MywwLjU5Ni03My42NzINCglsLTE5MC0xOTBjLTIwLjE3OC0yMC4xNzgtNTMuMTY0LTE5LjkxMy03My42NzEsMC41OTVsMCwwYy0yMC41MDgsMjAuNTA5LTIwLjc3Miw1My40OTItMC41OTUsNzMuNjcxTDIyMC4yNDksNDU1Ljg2OHoiLz4NCjwvc3ZnPg0K")
+    br
+    br
+    br
+  script(src='/javascripts/timeline.js')     

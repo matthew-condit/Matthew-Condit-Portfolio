@@ -1,12 +1,35 @@
+$highlight-color:#e74c3c;
+
 .countdown {
-    height: 90%;
-    background: url('../../images/bonfire.jpg') no-repeat;
-    background-size: cover;
-    h1 {
-        text-align: center;
+    background-color: #2c3e50;
+    min-height: 90%;
+    padding: 50px;
+    text-align: center;
+    h1, h3 {
         font-family: $title-font;
         font-size: 50px;
+        color: $highlight-color;
     }
+    fieldset {
+      margin: 0 auto;
+
+      input, label, button {
+        font-family: $title-font;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+        font-size: 1.2em;
+        color:$highlight-color;
+      }
+      input {
+        width: 220px;
+      }
+      button {
+        color: #333;
+        background-color: #ddd;
+      }
+    }
+
 }
 
 
@@ -16,16 +39,17 @@
 }
 
 .count {
-    background: rgba(255, 255, 255, 0.4);
-    border: 10px solid #555555;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 50px;
-    margin: 30px;
-    width:20%;
-    text-align: center;
+  font-family: $title-font;
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  color: $highlight-color;
 }
 
 .num {
-    font-size: 80px;
+    font-size: 100px;
+    font-family: $title-font;
 }

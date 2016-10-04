@@ -1,6 +1,8 @@
 extends layout 
 
 block content
+  .construction 
+    h1 Hello, the blog is currently under construction.  Check back later to sign up and start your own blog, right on this site!
   script(src='javascripts/blog/blog.js')
   .blog(ng-cloak ng-app='blogApp' style='height: 100%')
     .list(ng-controller='mainCtrl')

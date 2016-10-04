@@ -1,17 +1,25 @@
 extends layout
 block content 
-  .row.countdown
-    .col-xs-1
-    .col-xs-10
-      h1 Countdown to Matt's Birthday 
+  .countdown 
+    .countdown-header 
+      h1#header Countdown to Matt's Birthday
+      
+      h3 Enter your name and birthday to get your own countdown! 
+  
+      fieldset(data-role='')
+        label(for='name') Your Name:  
+        input(id='name', name='name', type='text', value='', placeholder='Your Name').form-control
+        label(for='bday') Your Birthday:   
+        input(id='date', type='date', name='date', value='', placeholder='').form-control
+        button.btn#clockid(value='Get your Countdown') Get your Countdown
       #clockdiv
-    .col-xs-1
+          
 
 
 
 
   script.
-
+    
     function initializeClock(id, endtime){
       var clock = document.getElementById(id);
       var timeinterval = setInterval(function(){
@@ -19,7 +27,12 @@ block content
         clock.innerHTML = '<div class="count"><span class="num">' + t.days +'</span><br>Days</div></div>' +                  '<div class="count"><span class="num">' + t.hours +'</span><br>Hours</div></div>' +                  '<div class="count"><span class="num">' + t.minutes +'</span><br>Minutes</div></div>' +                  '<div class="count"><span class="num">' + t.seconds +'</span><br>Seconds</div></div>';
         if(t.total<=0){
           clearInterval(timeinterval);
-        }
+        };
+        var submit = document.getElementById('clockid');
+        submit.onclick = function() {
+          endtime = $('#date').val();
+          $('#header').html('Countdown to ' + $('#name').val() +'\'s Birthday');
+        };
       },1000);
     };
 
@@ -36,7 +49,6 @@ block content
         'minutes': minutes,
         'seconds': seconds
       };
-    }
-    initializeClock('clockdiv', '2016-10-12')
-
-    
+    };
+    initializeClock('clockdiv', '2016-10-12');
+    $('.countdown').height($(window).height()-205);
