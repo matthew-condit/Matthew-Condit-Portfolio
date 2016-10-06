@@ -1,0 +1,12 @@
+extend layout 
+
+block content 
+  h1 New Blog Post 
+  form(action='saveBlog')
+    fieldset(data-role='')
+      label(for='title') Title 
+      input(id='titleInput', name='titleInput', type='text', value='', placeholder='Your Title').form-control
+      br
+      label(for='body') Your Article 
+      textare(id='bodyInput', name='body').form-control
+      input(type='submit', value='Post your Article').btn.btn-primary

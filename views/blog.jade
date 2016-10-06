@@ -9,6 +9,7 @@ block content
       .div(ng-controller='blogCtrl')
         h1 {{blog.title}}
         h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-        h6 (Like symbol) {{blog.likes.num}}
+        img(src='/images/res/awesome.png')
+        h6 {{blog.likes.num}}
         p {{blog.body}}
     .col-sm-2.col-md-3

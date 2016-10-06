@@ -30,11 +30,13 @@ router.get('/user/:id', function(req, res) {
 });
 
 router.get('/blogs', function(req, res) {
-  Blog.find({}, function(err, blogs) {
+  Blog.find({})
+  .populate('author')
+  .exec( function(err, blogs) {
     if (err) {
-      return res.status(500).json({ message: err.message });
+      return res.status(500).json({message: err.message});
     }
-    res.json({ blogs: blogs });
+    res.json({blogs: blogs});
   });
 });
 

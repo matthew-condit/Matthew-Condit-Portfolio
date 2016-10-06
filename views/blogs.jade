@@ -1,15 +1,19 @@
 extends layout 
 
 block content
-  .construction 
-    h1 Hello, the blog is currently under construction.  Check back later to sign up and start your own blog, right on this site!
   script(src='javascripts/blog/blog.js')
-  .blog(ng-cloak ng-app='blogApp' style='height: 100%')
+  .blog-splash 
+    h1 Blog
+  include ./partials/_login.jade
+  .blog(ng-cloak ng-app='blogApp')
     .list(ng-controller='mainCtrl')
       .blog-header(ng-repeat='blog in blogs')
         a(ng-href='/blog/{{blog._id}}')
           h2 {{blog.title}}
-          h3 Written by {{blog.author}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-          h6 (Like symbol) {{blog.likes.num}}
+          h3 Written by {{blog.author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
+          img(src='/images/res/awesome.png')
+          h4 {{blog.likes.num}} likes
+          p {{blog.body}}
+        hr
           
   

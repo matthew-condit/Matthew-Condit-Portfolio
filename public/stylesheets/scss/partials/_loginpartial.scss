@@ -1,0 +1,15 @@
+/* Login Partial Stylings */
+.login-partial {
+  text-align: center;
+
+  button {
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}

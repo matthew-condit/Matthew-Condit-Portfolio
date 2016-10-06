@@ -1,1 +1,26 @@
+/* Blog Stylings */
+.blog {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
 
+  img {
+    height: 30px;
+    display: inline-block;
+  }
+}
+
+.blog-splash {
+  text-align: center;
+  padding: 30px;
+  background-image: url('/images/keyboard.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  height:338px;
+  clip: auto;
+  h1 {
+    font-family: $title-font;
+    font-size: 8em;
+    color: white;
+  }
+}
