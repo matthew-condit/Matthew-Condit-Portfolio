@@ -450,7 +450,8 @@ a {
   .blog-splash h1 {
     font-family: "Nobile", sans-serif;
     font-size: 8em;
-    color: white; }
+    color: white;
+    text-shadow: 2px 2px 5px black; }
 
 /* Login Partial Stylings */
 .login-partial {
