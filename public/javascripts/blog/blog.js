@@ -31,11 +31,19 @@ app.controller('mainCtrl',function($scope, $http) {
     $scope.blogs = response.data.blogs;
   })};
   $scope.refresh();
+
   $scope.delete = function ( blog ) {
     $http.delete('../api/blog/' + blog._id).then(function(response) {
       $scope.refresh();
       console.log(response);
     });
+  };
+
+  $scope.like = function ( blog ) {
+    $http.post('../api/blog/like/' + blog._id).then(function(response){
+      $scope.refresh();
+      console.log(response);
+    })
   };
 });
 

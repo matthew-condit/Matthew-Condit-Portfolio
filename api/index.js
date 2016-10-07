@@ -61,6 +61,17 @@ router.post('/blog', function(req, res) {
   res.status(200).end();
 });
 
+router.post('/blog/like/:id', function(req, res) {
+  console.log('In like router');
+  Blog.fineOne({_id: req.params.id}, function(err, blog) {
+      console.log(blog);
+      if (err) return res.status(500);
+      blog.likes.num.$inc();
+      blog.save();
+  });
+  res.status(200).end();
+});
+
 router.delete('/blog/:id', function(req, res) {
   Blog.remove({_id: req.params.id},function(err) {
     if (!err) {

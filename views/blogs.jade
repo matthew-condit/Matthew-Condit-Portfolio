@@ -6,6 +6,7 @@ block content
     h1 Blog
   .blog-container
     include ./partials/_login.jade
+    br
     .blog(ng-cloak ng-app='blogApp')
       .list(ng-controller='mainCtrl')
         .blog-header(ng-repeat='blog in blogs')
@@ -15,7 +16,7 @@ block content
             | Written by 
             a(ng-href='/users/{{blog.author.username}}') {{blog.author.name}}
             |  on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-          button Like
+          button(ng-click='like(blog)') Like
           button(ng-click='delete(blog)') Delete
           h4 {{blog.likes.num}} likes
           p 

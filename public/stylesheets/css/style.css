@@ -473,13 +473,23 @@ a {
 
 /* Login Partial Stylings */
 .login-partial {
-  text-align: center; }
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px; }
   .login-partial button {
     padding: 10px;
+    color: white;
+    font-family: "Nobile", sans-serif;
     margin: 5px;
-    background-color: white;
-    border: 1px solid black; }
+    background-color: #52B3D9;
+    box-shadow: 2px 2px 5px #888888;
+    border: none;
+    display: inline-block;
+    float: left; }
     .login-partial button:hover {
-      background-color: #ddd; }
+      background-color: #3daad4; }
+    .login-partial button:active {
+      transform: translate(2px, 2px); }
 
 /*# sourceMappingURL=style.css.map */

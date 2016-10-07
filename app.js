@@ -27,7 +27,7 @@ var email = require('./routes/sendEmail');
 var app = express();
 
 require('./data/database');
-require('./data/seed');
+//require('./data/seed');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
