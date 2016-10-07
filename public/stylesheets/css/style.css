@@ -431,10 +431,20 @@ a {
     color: #555; }
 
 /* Blog Stylings */
+.blog-container {
+  background-color: #dddddd; }
+
 .blog {
   text-align: left;
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 20px; }
+  .blog a:hover {
+    text-decoration: underline;
+    color: #222; }
+  .blog p {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.5em; }
   .blog img {
     height: 30px;
     display: inline-block; }
@@ -452,6 +462,14 @@ a {
     font-size: 8em;
     color: white;
     text-shadow: 2px 2px 5px black; }
+
+.new-blog form {
+  width: 80%;
+  margin: 0 auto; }
+  .new-blog form * {
+    margin: 10px; }
+  .new-blog form textarea {
+    height: 200px; }
 
 /* Login Partial Stylings */
 .login-partial {

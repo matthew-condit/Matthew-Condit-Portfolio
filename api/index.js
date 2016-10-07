@@ -30,7 +30,7 @@ router.get('/user/:id', function(req, res) {
 });
 
 router.get('/blogs', function(req, res) {
-  Blog.find({})
+  Blog.find({}).sort({date: -1})
   .populate('author')
   .exec( function(err, blogs) {
     if (err) {
@@ -51,6 +51,26 @@ router.get('/blog/:id', function(req, res) {
       res.json({blog: blog, author: author});
     });
   });
+});
+
+router.post('/blog', function(req, res) {
+  User.findOne({'username': 'mcondit'}, function(err, user) {
+    var blogUserId = user._id;
+    Blog.create({title: req.body.title, author: blogUserId, body: req.body.body, hidden:false});
+  });
+  res.status(200).end();
+});
+
+router.delete('/blog/:id', function(req, res) {
+  Blog.remove({_id: req.params.id},function(err) {
+    if (!err) {
+      console.log('Blog Post successfully deleted');
+    }else {
+      console.error('Error Deleting blog post');
+    }
+  });
+  res.status(200).end();
+
 });
 
 module.exports = router;

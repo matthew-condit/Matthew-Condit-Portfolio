@@ -26,9 +26,17 @@ var singleBlogApp = angular.module('singleBlogApp', ['ngRoute']);
 
 app.controller('mainCtrl',function($scope, $http) {
   console.log('normal app controller');
-  $http.get('api/blogs').then(function(response) {
+  $scope.refresh = function() {
+    $http.get('api/blogs').then(function(response) {
     $scope.blogs = response.data.blogs;
-  });
+  })};
+  $scope.refresh();
+  $scope.delete = function ( blog ) {
+    $http.delete('../api/blog/' + blog._id).then(function(response) {
+      $scope.refresh();
+      console.log(response);
+    });
+  };
 });
 
 singleBlogApp.controller('blogCtrl',function($scope, $http, $location) {
@@ -41,4 +49,7 @@ singleBlogApp.controller('blogCtrl',function($scope, $http, $location) {
     $scope.blog = response.data.blog;
     $scope.author = response.data.author[0];
   });
+
+
+
 });

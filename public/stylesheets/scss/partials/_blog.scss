@@ -1,9 +1,23 @@
 /* Blog Stylings */
+.blog-container {
+  background-color: #dddddd;
+}
+
 .blog {
   text-align: left;
   width: 80%;
   margin: 0 auto;
-
+  padding: 20px;
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: #222;
+    }
+  }
+  p {
+    font-family: $para-font;
+    font-size: 1.5em;
+  }
   img {
     height: 30px;
     display: inline-block;
@@ -23,5 +37,20 @@
     font-size: 8em;
     color: white;
     text-shadow: 2px 2px 5px black;
+  }
+}
+
+.new-blog {
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+
+    * {
+      margin: 10px;
+    }
+    textarea {
+      height: 200px;
+    }
   }
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -18,7 +20,8 @@ var blog = require('./routes/blog');
 var user = require('./routes/user');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
-var newblog = require('./routes/newblog');
+var newblog = require('./routes/newBlog');
+var saveblog = require('./routes/saveBlog');
 var router = require('./api');
 var email = require('./routes/sendEmail');
 var app = express();
@@ -50,6 +53,7 @@ app.use('/login', login);
 app.use('/signup', signup);
 app.use('/newblog', newblog);
 app.use('/sendEmail', email);
+app.use('/saveBlog', saveblog);
 app.use('/api', router);
 
 // catch 404 and forward to error handler
