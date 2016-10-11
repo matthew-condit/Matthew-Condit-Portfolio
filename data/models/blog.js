@@ -9,7 +9,7 @@ var blogSchema = new mongoose.Schema({
   comments: [{body: String, date: Date}],
   date: {type:Date, default: Date.now},
   hidden: Boolean,
-  likes : {num: {type:Number, default: 0}, users: [mongoose.Schema.ObjectId]}
+  likes : [{ type: mongoose.Schema.ObjectId, ref: 'User'} ]
 });
 
 var authorSchema = new mongoose.Schema({});

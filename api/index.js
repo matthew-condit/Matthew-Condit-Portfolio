@@ -61,14 +61,22 @@ router.post('/blog', function(req, res) {
   res.status(200).end();
 });
 
-router.post('/blog/like/:id', function(req, res) {
+router.post('/like/:id', function(req, res) {
   console.log('In like router');
-  Blog.fineOne({_id: req.params.id}, function(err, blog) {
-      console.log(blog);
-      if (err) return res.status(500);
-      blog.likes.num.$inc();
-      blog.save();
+  User.findOne({'username': 'mcondit'}, function(err, user) {
+    Blog.findOne({_id: req.params.id}, function(err, blog) {
+        console.log(err);
+        console.log(blog.likes);
+        if (blog.likes.indexOf(user._id) == -1) blog.likes.push(user._id);
+        console.log(blog.likes);
+        blog.save(function (err) {
+          if (err) {
+            console.error('Angry error: ' + err);
+          }
+        });
+    });
   });
+
   res.status(200).end();
 });
 
