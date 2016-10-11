@@ -4,14 +4,16 @@ var express = require('express');
 var passport = require('passport');
 var Blog = require('../data/models/blog');
 var User = require('../data/models/user');
+var ctrlProfile = require('./controllers/profile');
 var jwt = require('express-jwt');
 var auth = jwt({
   secret: 'MY_SECRET',
   userProperty: 'payload'
 });
 
-
 var router = express.Router();
+
+router.get('/profile', auth, ctrlProfile.profileRead);
 
 router.get('/users', function(req, res) {
   User.find({}, function(err, users) {
