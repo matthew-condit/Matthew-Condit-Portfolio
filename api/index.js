@@ -1,8 +1,15 @@
 'use strict';
 
 var express = require('express');
+var passport = require('passport');
 var Blog = require('../data/models/blog');
 var User = require('../data/models/user');
+var jwt = require('express-jwt');
+var auth = jwt({
+  secret: 'MY_SECRET',
+  userProperty: 'payload'
+});
+
 
 var router = express.Router();
 
@@ -27,6 +34,49 @@ router.get('/user/:id', function(req, res) {
     });
 
   });
+});
+
+
+//New Functions to implement
+router.post('/register', function(req, res) {
+  console.log("Registering user: " + req.body.username);
+
+  var user = new User();
+  user.name = req.body.name;
+  user.username = req.body.username;
+  user.email = req.body.email;
+  user.setPassword(req.body.password);
+
+  user.save(function(err) {
+    var token;
+    token = user.generateJwt();
+    res.status(200);
+    res.json({"token": token});
+  });
+});
+
+router.post('/login', function(req, res) {
+  passport.authenticate('local', function(err, user, info) {
+    var token;
+
+    //If Passport throws/catches an error
+    if (err) {
+      res.status(404).json(err);
+      return;
+    }
+    //If User is found
+    if (user) {
+    token = user.generateJwt();
+    res.status(200);
+    res.json({"token": token});
+    } else {
+      res.status(401).json(info);
+    }
+  })(req, res);
+});
+
+router.get('profile/:id', function(req, res) {
+
 });
 
 router.get('/blogs', function(req, res) {

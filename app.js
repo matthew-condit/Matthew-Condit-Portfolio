@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mailer = require('express-mailer');
 var sitemap = require('express-sitemap')();
+var passport = require('passport');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,11 +23,12 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var newblog = require('./routes/newBlog');
 var saveblog = require('./routes/saveBlog');
-var router = require('./api');
+var api = require('./api');
 var email = require('./routes/sendEmail');
 var app = express();
 
 require('./data/database');
+require('./api/passport');
 //require('./data/seed');
 
 // view engine setup
@@ -39,6 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use('/', routes);
 app.use('/users', users);
@@ -54,7 +57,7 @@ app.use('/signup', signup);
 app.use('/newblog', newblog);
 app.use('/sendEmail', email);
 app.use('/saveBlog', saveblog);
-app.use('/api', router);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
