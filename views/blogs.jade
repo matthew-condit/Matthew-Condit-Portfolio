@@ -16,8 +16,8 @@ block content
             | Written by 
             a(ng-href='/users/{{blog.author.username}}') {{blog.author.name}}
             |  on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-          button(ng-click='like(blog)') Like
           if admin
+            button(ng-click='like(blog)') Like
             button(ng-click='delete(blog)') Delete
           h4 {{blog.likes.length}} likes
           p 

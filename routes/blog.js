@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
   if (req.session.userId) {
     User.findById(req.session.userId)
       .exec(function(error, user) {
+        console.log(user);
         if (error) {
           return next(error);
         }
@@ -17,8 +18,11 @@ router.get('/', function(req, res, next) {
           return res.render('blogs', {title: 'Blogs', name: user.username});
         }
       })
+  } 
+  else
+  {
+    return res.render('blogs', {title: 'My Blog'});
   }
-  return res.render('blogs', {title: 'My Blog'});
 });
 
 /* GET New blog page. */
@@ -79,15 +83,17 @@ router.post('/login', function(req, res, next) {
   console.log(req.body.email, req.body.password);
   if (req.body.email && req.body.password) {
     User.authenticate(req.body.email, req.body.password, function(error, user) {
+      console.log(err, user);
       if (error || !user) {
         var err = new Error('Wrong email or password.');
+        console.log('wrong email error');
         return next(err);
       }
       else {
         req.session.userId = user._id;
         return res.redirect('/blog');
       }
-    });
+    })
   } else {
     console.log('WEIRD ERROR BRO');
     var err = new Error('Email and password are missing.');
