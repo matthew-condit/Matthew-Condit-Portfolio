@@ -11,18 +11,7 @@ var sitemap = require('express-sitemap')();
 var passport = require('passport');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var about = require('./routes/about');
-var resume = require('./routes/resume');
-var works = require('./routes/works');
-var countdown = require('./routes/countdown');
-var weather = require('./routes/weather');
 var blog = require('./routes/blog');
-var user = require('./routes/user');
-var login = require('./routes/login');
-var signup = require('./routes/signup');
-var newblog = require('./routes/newBlog');
-var saveblog = require('./routes/saveBlog');
 var api = require('./api');
 var email = require('./routes/sendEmail');
 var app = express();
@@ -44,19 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/about', about);
-app.use('/resume', resume);
-app.use('/works', works);
-app.use('/countdown', countdown);
-app.use('/weather', weather);
 app.use('/blog', blog);
-app.use('/users', user);
-app.use('/login', login);
-app.use('/signup', signup);
-app.use('/newblog', newblog);
 app.use('/sendEmail', email);
-app.use('/saveBlog', saveblog);
 app.use('/api', api);
 
 // catch 404 and forward to error handler

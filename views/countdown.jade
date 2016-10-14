@@ -2,17 +2,18 @@ extends layout
 block content 
   .countdown 
     .countdown-header 
-      h1#header Countdown to Matt's Birthday
+      h1#header Christmas Countdown 2016
       
-      h3 Enter your name and birthday to get your own countdown! 
+      h3 Enter your name and a date to get your own countdown! 
   
       fieldset(data-role='')
         label(for='name') Your Name:  
         input(id='name', name='name', type='text', value='', placeholder='Your Name').form-control
-        label(for='bday') Your Birthday:   
+        label(for='bday') Your Date:   
         input(id='date', type='date', name='date', value='', placeholder='').form-control
         button.btn#clockid(value='Get your Countdown') Get your Countdown
       #clockdiv
+      img(src='/images/christmas.png' alt='christmas tree')
           
 
 
@@ -31,7 +32,7 @@ block content
         var submit = document.getElementById('clockid');
         submit.onclick = function() {
           endtime = $('#date').val();
-          $('#header').html('Countdown to ' + $('#name').val() +'\'s Birthday');
+          $('#header').html('Countdown to ' + $('#name').val() +'\'s Date');
         };
       },1000);
     };
@@ -50,5 +51,4 @@ block content
         'seconds': seconds
       };
     };
-    initializeClock('clockdiv', '2016-10-12');
-    $('.countdown').height($(window).height()-205);
+    initializeClock('clockdiv', '2016-12-25');

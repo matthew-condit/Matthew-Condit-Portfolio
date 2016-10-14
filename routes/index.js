@@ -6,4 +6,27 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Web Application Developer in Boston, MA' });
 });
 
+/* GET about page. */
+router.get('/about', function(req, res, next) {
+  res.render('about', {title: 'About Me'});
+});
+
+/* GET resume page. */
+router.get('/resume', function(req, res, next) {
+  res.render('resume', {title: 'Resume'});
+});
+
+/* GET countdown page. */
+router.get('/countdown', function(req, res, next) {
+  res.render('countdown', {title: 'Christmas Countdown'});
+});
+
+/* GET portfolio page. */
+router.get('/works', function(req, res, next) {
+  res.render('works', {title: 'My Portfolio'});
+});
+
+
+
+
 module.exports = router;
