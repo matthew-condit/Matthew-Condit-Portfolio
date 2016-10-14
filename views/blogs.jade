@@ -17,7 +17,8 @@ block content
             a(ng-href='/users/{{blog.author.username}}') {{blog.author.name}}
             |  on {{blog.date | date: "EEEE, MMMM d yyyy"}}
           button(ng-click='like(blog)') Like
-          button(ng-click='delete(blog)') Delete
+          if admin
+            button(ng-click='delete(blog)') Delete
           h4 {{blog.likes.length}} likes
           p 
             a(ng-href='/blog/{{blog._id}}') {{blog.body | limitTo: 300 }} ...

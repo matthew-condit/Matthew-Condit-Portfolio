@@ -1,10 +1,16 @@
 .login-partial 
-  .sign-in 
-    a(href='blog/register')
-      button(value='Register') Register
-  .sign-up
-    a(href='blog/login')
-      button(value='Log In to Existing Account') Log In
-  .new-blog 
-    a(href='blog/newblog')
-      button(value='New Blog Post') Write New Blog Post
+  if currentUser
+    h2 Hello #{currentUser.username}
+    .new-blog 
+      a(href='blog/newblog')
+        button(value='New Blog Post') Write New Blog Post
+    .logout
+      a(href='blog/logout')
+        button(value='Log Out') Log Out
+  else 
+    .sign-in 
+      a(href='blog/register')
+        button(value='Register') Register
+    .sign-up
+      a(href='blog/login')
+        button(value='Log In to Existing Account') Log In

@@ -7,6 +7,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mailer = require('express-mailer');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var sitemap = require('express-sitemap')();
 var passport = require('passport');
 
@@ -14,11 +16,18 @@ var routes = require('./routes/index');
 var blog = require('./routes/blog');
 var api = require('./api');
 var email = require('./routes/sendEmail');
+
 var app = express();
 
 require('./data/database');
-require('./api/passport');
 //require('./data/seed');
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'conditwebdesign',
+  resave: true,
+  saveUninitialized: false
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +40,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
+
+// makes user ID available to templates
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.session.userId;
+  next();
+});
 
 app.use('/', routes);
 app.use('/blog', blog);
@@ -50,10 +65,9 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
+    return res.render('error', {
       message: err.message,
-      error: err
+      error: err.stack
     });
   });
 }
