@@ -2,12 +2,13 @@ extend layout
 
 block content 
   .new-blog
-    h1 New Blog Post 
+    
     form(action='saveBlog', method='post')
+      h1 New Blog Post 
       fieldset(data-role='')
         label(for='title') Title 
-        input(id='titleInput', name='titleInput', type='text', value='', placeholder='Your Title').form-control
+        input(id='titleInput', name='titleInput', type='text', value='', placeholder='Your Title', require='true').form-control
         br
         label(for='body') Your Article (Box is resizable)
-        textarea(id='bodyInput', name='bodyInput').form-control
+        textarea(id='bodyInput', name='bodyInput', required='true').form-control
         input(type='submit', value='Post your Article').btn.btn-primary

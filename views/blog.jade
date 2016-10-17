@@ -1,15 +1,13 @@
 extends layout 
 
 block content
-  script(src='../javascripts/blog/blog.js')
-  a(href="/blog") Go back to all blogs
-  .row
-    .col-sm-2.col-md-3
-    .col-sm-8.col-md-6(ng-cloak ng-app='singleBlogApp' style='height: 100%')
-      .div(ng-controller='blogCtrl')
-        h1 {{blog.title}}
-        h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-        img(src='/images/res/awesome.png')
-        h6 {{blog.likes}}
-        p {{blog.body}}
-    .col-sm-2.col-md-3
+  .single-blog
+    script(src='../javascripts/blog/blog.js')
+    a(href="/blog"): p ← Go back to all blogs
+    .row
+      .col-md-6.col-md-offset-3(ng-cloak ng-app='singleBlogApp')
+        .div(ng-controller='blogCtrl')
+          h1 {{blog.title}}
+          h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
+          h6 {{blog.likes.length}} likes
+          p {{blog.body}}

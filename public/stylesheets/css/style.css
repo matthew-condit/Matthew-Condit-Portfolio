@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+  height: 100vh; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Nobile", sans-serif; }
 
@@ -294,7 +298,7 @@ a {
 
 .countdown {
   background-color: #2e5620;
-  min-height: 90%;
+  min-height: 90vh;
   padding: 50px;
   text-align: center; }
   .countdown h1, .countdown h3 {
@@ -437,7 +441,8 @@ a {
 
 /* Blog Stylings */
 .blog-container {
-  background-color: #dddddd; }
+  background-color: #dddddd;
+  min-height: 50vh; }
 
 .blog {
   text-align: left;
@@ -468,13 +473,34 @@ a {
     color: white;
     text-shadow: 2px 2px 5px black; }
 
-.new-blog form {
-  width: 80%;
-  margin: 0 auto; }
-  .new-blog form * {
-    margin: 10px; }
-  .new-blog form textarea {
-    height: 200px; }
+.new-blog {
+  background-color: #456990;
+  height: 89vh;
+  padding: 20px;
+  color: #ddd; }
+  .new-blog form {
+    width: 80%;
+    margin: 0 auto; }
+    .new-blog form * {
+      margin: 10px; }
+    .new-blog form textarea {
+      height: 50vh; }
+
+.single-blog {
+  background-color: #ddd;
+  min-height: 90vh;
+  padding: 20pxl; }
+
+/* Login and Register Partials */
+.register, .login {
+  padding: 30px;
+  background-color: #456990;
+  color: #ddd;
+  /* Set the height to match that of the viewport. */
+  height: 89vh; }
+  .register .error, .login .error {
+    color: #990000;
+    font-size: 1.5em; }
 
 /* Login Partial Stylings */
 .login-partial {

@@ -1,0 +1,12 @@
+/* Login and Register Partials */
+.register, .login {
+  padding: 30px;
+  background-color: #456990;
+  color: #ddd;
+  /* Set the height to match that of the viewport. */
+  height: 89vh;
+  .error {
+    color: darken(red, 20%);
+    font-size: 1.5em;
+  }
+}

@@ -1,6 +1,7 @@
 /* Blog Stylings */
 .blog-container {
   background-color: #dddddd;
+  min-height: 50vh;
 }
 
 .blog {
@@ -41,7 +42,10 @@
 }
 
 .new-blog {
-
+  background-color: #456990;
+  height: 89vh;
+  padding: 20px;
+  color: #ddd;
   form {
     width: 80%;
     margin: 0 auto;
@@ -50,7 +54,13 @@
       margin: 10px;
     }
     textarea {
-      height: 200px;
+      height: 50vh;
     }
   }
+}
+
+.single-blog {
+  background-color: #ddd;
+  min-height: 90vh;
+  padding: 20px;
 }

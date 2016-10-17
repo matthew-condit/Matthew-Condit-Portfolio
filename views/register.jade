@@ -1,19 +1,19 @@
 extend layout 
 
 block content
-  .main.container
+  .register
     .row
       .col-md-6.col-md-offset-3
         h1.display-4.m-b-2 Sign Up
 
         // register form
-        form(method='POST' action='./register')
+        form#registration(method='POST' name='registration' action='./register')
           div.form-group
             label(for='name') Full Name:
             input#name.form-control(type='text', placeholder='John Doe' name='name')
           div.form-group
             label(for='username') Username:
-            input#username.form-control(type='text', placeholder='firstlast' name='username')
+            input#username.form-control(type='text', placeholder='jdoe' name='username')
           div.form-group
             label(for='email') Email:
             input#email.form-control(type='email', placeholder='name@email.com' name='email')
@@ -24,3 +24,5 @@ block content
             label(for='pw2') Confirm Password:
             input#pw2.form-control(type='password' name='confirmPassword')
           button.btn.btn-primary(type='submit') Sign up
+  script(src='http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js')
+  script(src='../javascripts/form-validation.js')

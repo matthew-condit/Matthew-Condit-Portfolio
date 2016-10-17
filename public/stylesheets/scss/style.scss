@@ -5,7 +5,10 @@ $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
-
+body{
+  background-color: black; 
+  height: 100vh;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $title-font;
 }
@@ -32,4 +35,5 @@ a {
 @import './partials/countdown';
 @import './partials/weather';
 @import './partials/blog';
+@import './partials/login';
 @import './partials/loginpartial';
