@@ -6,7 +6,7 @@ var router = express.Router();
 
 
 /* GET all blogs page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {;
   if (req.session.userId) {
     User.findById(req.session.userId)
       .exec(function(error, user) {
@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
           return next(error);
         }
         else {
-          return res.render('blogs', {title: 'Blogs', name: user.username});
+          var userObject = user.toObject();
+          return res.render('blogs', {title: 'Blogs', name: userObject.name, admin: userObject.admin});
         }
       })
   } 
@@ -42,9 +43,10 @@ router.get('/register', function(req, res, next) {
   return res.render('register', {title: 'Register'});
 });
 
+/* POST register page. */
 router.post('/register', function(req, res, next) {
   console.log(req.body);
-  if (req.body.email && req.body.username && req.body.password && req.body.confirmPassword)
+  if (req.body.name && req.body.email && req.body.username && req.body.password && req.body.confirmPassword)
   {
     //if passwords don't match
     if(req.body.password !== req.body.confirmPassword){
@@ -54,6 +56,7 @@ router.post('/register', function(req, res, next) {
     }
     //create object
     var userData = {
+      name: req.body.name,
       email: req.body.email,
       username : req.body.username,
       password : req.body.password
@@ -79,11 +82,11 @@ router.get('/login', function(req, res, next) {
   return res.render('login', {title: 'Log In'});
 });
 
+/* POST login page. */
 router.post('/login', function(req, res, next) {
   console.log(req.body.email, req.body.password);
   if (req.body.email && req.body.password) {
     User.authenticate(req.body.email, req.body.password, function(error, user) {
-      console.log(err, user);
       if (error || !user) {
         var err = new Error('Wrong email or password.');
         console.log('wrong email error');
@@ -121,7 +124,7 @@ router.get('/logout', function(req, res, next) {
 router.post('/saveBlog', function(req, res, next) {
   var title = req.body.titleInput;
   var body = req.body.bodyInput;
-  request.post('http://' +req.headers.host + '/api/blog', {json: {body: body, title: title, id: req.session.userId}},
+  request.post('http://' +req.headers.host + '/api/blog', {json: {body: body, title: title, userId: req.session.userId}},
   function(err, httpResponse, body) {
     if (err) {
       console.error('error posting blog');

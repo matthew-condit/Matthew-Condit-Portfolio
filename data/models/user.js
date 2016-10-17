@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var userSchema = new mongoose.Schema({
-  username: {type: String, required: true, unique: true},
+  name: {type: String, required: true, trim: true},
+  username: {type: String, required: true,trim: true, unique: true},
   email: {type: String, trim: true, required: true},
   admin: {type:Boolean, default: false},
   location: String,
@@ -13,13 +14,11 @@ var userSchema = new mongoose.Schema({
     website: String
   },
   created_at: Date,
-  updated_at: Date,
   password: String
 });
 
 
 userSchema.statics.authenticate = function(email, password, callback) {
-  console.log('**************STARTING AUTHENTICATE*****************************');
   User.findOne({email: email})
     .exec(function(error, user) {
       if (error) {
@@ -32,7 +31,6 @@ userSchema.statics.authenticate = function(email, password, callback) {
       }
       bcrypt.compare(password, user.password, function(error, result) {
         if (result === true) {
-          console.log('**************PERFECTLY HAPPY*****************************')
           return callback(null, user);
         } else {
           console.log('mismatch');
