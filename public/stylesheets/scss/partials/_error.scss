@@ -1,0 +1,23 @@
+
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color) {
+  filter: drop-shadow(makelongshadow($color));
+}
+
+$error-color: palevioletred;
+.error-page {
+  background-color: $error-color;
+  padding: 20px;
+  text-align: center;
+  img {
+    height: 80vh;
+    @include longshadow(darken($error-color, 8%));
+  }
+}

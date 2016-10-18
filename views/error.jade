@@ -1,6 +1,7 @@
 extends layout
 
 block content
-  h1= error
-  h2= message
-  pre #{error.stack}
+  .error-page
+    h1 You have arrived at #{status} Spooky Lane, Boston MA
+    h3 Head home while you still have a chance!
+    img(src='/images/res/monster.png' alt='monster!')

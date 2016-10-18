@@ -6,8 +6,6 @@
 
 .blog {
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
   padding: 20px;
   a {
     &:hover {
@@ -40,10 +38,12 @@
     text-shadow: 2px 2px 5px black;
   }
 }
-
+#titleInput { 
+    
+}
 .new-blog {
   background-color: #456990;
-  height: 89vh;
+  min-height: 89vh;
   padding: 20px;
   color: #ddd;
   form {

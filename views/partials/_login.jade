@@ -1,4 +1,4 @@
-.login-partial 
+.login-partial.col-sm-6.col-md-3
   if currentUser
     h2 Hello #{name}
     .new-blog-button
@@ -8,6 +8,7 @@
       a(href='blog/logout')
         button(value='Log Out') Log Out
   else 
+    br
     .sign-in 
       a(href='blog/register')
         button(value='Register') Register

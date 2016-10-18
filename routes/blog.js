@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {;
         }
         else {
           var userObject = user.toObject();
-          return res.render('blogs', {title: 'Blogs', name: userObject.name, admin: userObject.admin});
+          return res.render('blogs', {title: 'Blogs', name: userObject.name, admin: userObject.admin, loggedIn: true});
         }
       })
   } 

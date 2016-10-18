@@ -7,7 +7,7 @@ $mediaMinWidth: 480px;
 
 body{
   background-color: black; 
-  height: 100vh;
+  min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $title-font;
@@ -15,7 +15,9 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: $para-font;
 }
-
+.row { 
+  margin: 0;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -37,3 +39,4 @@ a {
 @import './partials/blog';
 @import './partials/login';
 @import './partials/loginpartial';
+@import './partials/error';

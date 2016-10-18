@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var https = require('https');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -18,6 +19,7 @@ var api = require('./api');
 var email = require('./routes/sendEmail');
 
 var app = express();
+
 
 require('./data/database');
 //require('./data/seed');
@@ -68,7 +70,9 @@ if (app.get('env') === 'development') {
     console.log(err);
     return res.render('error', {
       message: err.message, 
-      error: err
+      error: err.stack, 
+      status: err.status, 
+      title: err.status
     });
   });
 }
@@ -77,9 +81,12 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
+  console.log(error);
   res.render('error', {
-    message: err.message,
-    error: {}
+    message: err.message, 
+    error: err.stack, 
+    status: err.status, 
+    title: err.status
   });
 });
 

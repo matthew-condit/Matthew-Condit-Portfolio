@@ -1,9 +1,11 @@
 /* Login Partial Stylings */
 .login-partial {
   text-align: center;
-  width: 80%;
-  margin: 0 auto;
   padding: 15px;
+  display: inline-block;
+  h2 {
+
+  }
   button {
     padding: 10px;
     color: white;
@@ -12,8 +14,6 @@
     background-color: #52B3D9;
     box-shadow: 2px 2px 5px #888888;
     border: none;
-    display: inline-block;
-    float: left;
     &:hover {
       background-color: darken(#52B3D9, 5%);
     }
