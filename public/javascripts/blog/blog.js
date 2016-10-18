@@ -28,7 +28,7 @@ app.controller('mainCtrl',function($scope, $http) {
 
 
 
-singleBlogApp.controller('blogCtrl',function($scope, $http, $location) {
+singleBlogApp.controller('blogCtrl',function($scope, $http, $location, $sce) {
   console.log('Single app controller');
   var path = $location.absUrl().split(/[\s/]+/).pop();
   console.log(path);
@@ -36,6 +36,7 @@ singleBlogApp.controller('blogCtrl',function($scope, $http, $location) {
   $http.get('../api/blog/' + path).then(function(response) {
     console.dir(response.data);
     $scope.blog = response.data.blog;
+    $scope.blogHTML = $sce.trustAsHtml(response.data.blog.body);
     $scope.author = response.data.author[0];
   });
 

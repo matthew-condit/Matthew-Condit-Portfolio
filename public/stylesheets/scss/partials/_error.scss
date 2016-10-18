@@ -13,11 +13,14 @@
 
 $error-color: palevioletred;
 .error-page {
+  min-height: 90vh;
   background-color: $error-color;
   padding: 20px;
   text-align: center;
-  img {
-    height: 80vh;
-    @include longshadow(darken($error-color, 8%));
+  .monster-container {
+    width: 100%;
+    img {
+      width: 14%;
+    }
   }
 }
