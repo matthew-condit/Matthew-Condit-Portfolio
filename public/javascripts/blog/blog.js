@@ -4,12 +4,14 @@ var app = angular.module('blogApp', []);
 
 var singleBlogApp = angular.module('singleBlogApp', ['ngRoute']);
 
-app.controller('mainCtrl',function($scope, $http) {
+app.controller('mainCtrl',function($scope, $http, $sce, $filter) {
   console.log('normal app controller');
   $scope.refresh = function() {
     $http.get('api/blogs').then(function(response) {
-      console.log(response.data.blogs);
       $scope.blogs = response.data.blogs;
+      for (var i in response.data.blogs) {
+        response.data.blogs[i].preview = $sce.trustAsHtml($filter('limitTo')(response.data.blogs[i].body, 300) + '...');
+      }; 
   })};
   $scope.refresh();
 

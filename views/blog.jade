@@ -10,4 +10,4 @@ block content
           h1 {{blog.title}}
           h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
           h6 {{blog.likes.length}} likes
-          .blog-body(ng-bind-html='blogHTML') didn't work
+          p.blog-body(ng-bind-html='blogHTML') didn't work

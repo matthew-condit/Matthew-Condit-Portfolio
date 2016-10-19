@@ -18,6 +18,10 @@ a {
     color: inherit;
     text-decoration: none; }
 
+.clear {
+  clear: both;
+  line-height: 0; }
+
 /* Nav Partial Styles */
 .nav * {
   font-weight: 700; }
@@ -449,13 +453,15 @@ a {
 
 .blog {
   text-align: left;
-  padding: 20px; }
+  padding: 15px;
+  margin: 25px;
+  background-color: white; }
   .blog a:hover {
     text-decoration: underline;
     color: #222; }
   .blog p {
     font-family: "Roboto Slab", serif;
-    font-size: 1.5em; }
+    font-size: 1.3em; }
   .blog img {
     height: 30px;
     display: inline-block; }
@@ -491,6 +497,8 @@ a {
   background-color: #ddd;
   min-height: 90vh;
   padding: 20px; }
+  .single-blog .blog-body p {
+    font-size: 1.5em; }
 
 /* Login and Register Partials */
 .register, .login {
@@ -506,20 +514,24 @@ a {
 /* Login Partial Stylings */
 .login-partial {
   text-align: center;
-  padding: 15px;
-  display: inline-block; }
-  .login-partial button {
-    padding: 10px;
-    color: white;
-    font-family: "Nobile", sans-serif;
-    margin: 5px;
-    background-color: #52B3D9;
-    box-shadow: 2px 2px 5px #888888;
-    border: none; }
-    .login-partial button:hover {
-      background-color: #3daad4; }
-    .login-partial button:active {
-      transform: translate(2px, 2px); }
+  background-color: white;
+  clear: left;
+  display: block; }
+  .login-partial h2 {
+    display: inline-block;
+    float: left;
+    font-size: 1em;
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #888; }
+  .login-partial p {
+    display: inline-block;
+    float: right;
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #888; }
 
 .error-page {
   min-height: 90vh;

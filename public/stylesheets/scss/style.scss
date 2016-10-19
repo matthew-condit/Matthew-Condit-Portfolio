@@ -27,6 +27,10 @@ a {
   }
 }
 
+.clear {
+  clear:both; 
+  line-height: 0;
+}
 
 @import './partials/nav';
 @import './partials/index';

@@ -1,9 +1,12 @@
 var express = require('express');
 var request = require('request');
 var mid = require('../middleware');
+var busboy = require('connect-busboy');
+var fs = require('fs');
+var multer = require('multer');
+var upload = multer({dest: '../public/images/blog'});
 var User = require('../data/models/user');
 var router = express.Router();
-
 
 /* GET all blogs page. */
 router.get('/', function(req, res, next) {;
@@ -121,7 +124,9 @@ router.get('/logout', function(req, res, next) {
 });
 
 /* POST saveblog router. */
-router.post('/saveBlog', function(req, res, next) {
+router.post('/saveBlog', upload.single('image'),function(req, res, next) {
+  console.log(req.body, 'Body'); 
+  console.log(req.file, 'files');
   var title = req.body.titleInput;
   var body = req.body.bodyInput;
   request.post('http://' +req.headers.host + '/api/blog', {json: {body: body, title: title, userId: req.session.userId}},
@@ -133,6 +138,7 @@ router.post('/saveBlog', function(req, res, next) {
   });
   return res.redirect('/blog');
 });
+
 
 router.get('/:id', function(req, res, next) {
   return res.render('blog', {title: 'Blog'});

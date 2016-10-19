@@ -6,7 +6,9 @@
 
 .blog {
   text-align: left;
-  padding: 20px;
+  padding: 15px;
+  margin: 25px;
+  background-color: white;
   a {
     &:hover {
       text-decoration: underline;
@@ -15,7 +17,7 @@
   }
   p {
     font-family: $para-font;
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   img {
     height: 30px;
@@ -63,4 +65,9 @@
   background-color: #ddd;
   min-height: 90vh;
   padding: 20px;
+  .blog-body {
+    p {
+      font-size: 1.5em;
+    }
+  }
 }

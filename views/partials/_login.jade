@@ -1,17 +1,15 @@
-.login-partial.col-sm-6.col-md-3
+.login-partial
   if currentUser
     h2 Hello #{name}
     .new-blog-button
-      a(href='blog/newblog')
-        button(value='New Blog Post') Write New Blog Post
+      p: a(href='blog/newblog') + Write New Blog Post
     .logout
-      a(href='blog/logout')
-        button(value='Log Out') Log Out
+      p: a(href='blog/logout') Log Out
+    br.clear
   else 
-    br
     .sign-in 
-      a(href='blog/register')
-        button(value='Register') Register
+      p:  a(href='blog/register') REGISTER
     .sign-up
-      a(href='blog/login')
-        button(value='Log In to Existing Account') Log In
+      p:  a(href='blog/login') LOG IN
+    br.clear
+    

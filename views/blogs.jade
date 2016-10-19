@@ -5,25 +5,24 @@ block content
   .blog-splash 
     h1 Blog
   .blog-container
-    .row
-      include ./partials/_login.jade
-      .blog.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-0(ng-cloak ng-app='blogApp')
-        .list(ng-controller='mainCtrl')
-          .blog-header(ng-repeat='blog in blogs')
-            a(ng-href='/blog/{{blog._id}}')
-              h2 {{blog.title}}
-            h3
-              | Written by 
-              a(ng-href='/users/{{blog.author.username}}') {{blog.author.name}}
-              |  on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-            if admin
-              button(ng-click='delete(blog)') Delete
-            if loggedIn
-              button(ng-click='like(blog)') Like
-            
-            h4 {{blog.likes.length}} likes
-            p 
-              a(ng-href='/blog/{{blog._id}}') {{blog.body | limitTo: 200 }}...
-            hr
-            
+    include ./partials/_login.jade
+    br
+    .blog(ng-cloak ng-app='blogApp')
+      .list(ng-controller='mainCtrl')
+        .blog-header(ng-repeat='blog in blogs')
+          a(ng-href='/blog/{{blog._id}}')
+            img.blog-img(ng-src='/images/blog/{{blog.imageUrl}}' ng-if='blog.imageUrl !== undefined' alt='blog photo')
+            h2 {{blog.title}}
+          h3: a(ng-href='/users/{{blog.author.username}}') By {{blog.author.name}}
+          h3 {{blog.date | date: "MMMM d, yyyy"}}
+          if admin
+            button(ng-click='delete(blog)') Delete
+          if loggedIn
+            button(ng-click='like(blog)') Like
+
+          h4 {{blog.likes.length}} likes
+          p
+            |      
+            a(ng-href='/blog/{{blog._id}}' ng-bind-html='blog.preview') {{blog.preview}}
+
   

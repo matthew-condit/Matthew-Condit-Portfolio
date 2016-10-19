@@ -6,6 +6,7 @@ var blogSchema = new mongoose.Schema({
 	title: String,
 	author: {type: mongoose.Schema.ObjectId, ref: 'User'},
   body: String,
+  imageUrl: String,
   comments: [{body: String, date: Date}],
   date: {type:Date, default: Date.now},
   hidden: Boolean,

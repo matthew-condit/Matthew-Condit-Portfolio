@@ -12,6 +12,9 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var sitemap = require('express-sitemap')();
 var passport = require('passport');
+var fileUpload = require('express-fileupload');
+var busboy = require('connect-busboy');
+var multer = require('multer');
 
 var routes = require('./routes/index');
 var blog = require('./routes/blog');
@@ -42,6 +45,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
+app.use(fileUpload());
+app.use(busboy());
+app.use(multer({dest: './public/images/'}).single('photo'));
 
 // makes user ID available to templates
 app.use(function(req, res, next) {

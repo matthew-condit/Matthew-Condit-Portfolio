@@ -1,24 +1,25 @@
 /* Login Partial Stylings */
 .login-partial {
   text-align: center;
-  padding: 15px;
-  display: inline-block;
+  background-color: white;
+  clear: left;
+  display: block;
   h2 {
-
+    display: inline-block; 
+    float: left;
+    font-size: 1em;
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #888;
+    
   }
-  button {
-    padding: 10px;
-    color: white;
-    font-family: $title-font;
-    margin: 5px;
-    background-color: #52B3D9;
-    box-shadow: 2px 2px 5px #888888;
-    border: none;
-    &:hover {
-      background-color: darken(#52B3D9, 5%);
-    }
-    &:active {
-      transform: translate(2px, 2px);
-    }
+  p {
+    display: inline-block;
+    float: right;
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #888;
   }
 }
