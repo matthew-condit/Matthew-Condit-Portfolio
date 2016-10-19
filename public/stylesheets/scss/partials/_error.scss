@@ -17,10 +17,20 @@ $error-color: palevioletred;
   background-color: $error-color;
   padding: 20px;
   text-align: center;
+  font-family: 'Eater', cursive;
+ * {
+    font-family: 'Eater', serif;
+  }
   .monster-container {
     width: 100%;
     img {
       width: 14%;
+    }
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: lighten(black, 30%);
     }
   }
 }

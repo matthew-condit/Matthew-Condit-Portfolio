@@ -36,7 +36,7 @@ singleBlogApp.controller('blogCtrl',function($scope, $http, $location, $sce) {
   $http.get('../api/blog/' + path).then(function(response) {
     console.dir(response.data);
     $scope.blog = response.data.blog;
-    $scope.blogHTML = $sce.trustAsHtml(response.data.blog.body);
+    $scope.blogHTML = $sce.trustAsHtml('<p>' +response.data.blog.body +'</p>');
     $scope.author = response.data.author[0];
   });
 

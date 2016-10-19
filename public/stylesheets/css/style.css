@@ -525,10 +525,17 @@ a {
   min-height: 90vh;
   background-color: palevioletred;
   padding: 20px;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Eater', cursive; }
+  .error-page * {
+    font-family: 'Eater', serif; }
   .error-page .monster-container {
     width: 100%; }
     .error-page .monster-container img {
       width: 14%; }
+  .error-page a {
+    text-decoration: underline; }
+    .error-page a:hover {
+      color: #4d4d4d; }
 
 /*# sourceMappingURL=style.css.map */
