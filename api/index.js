@@ -60,8 +60,8 @@ router.get('/blog/:id', function(req, res) {
 });
 
 router.post('/blog', function(req, res) {
-  console.log('*******************************', req.body.userId);
-  Blog.create({title: req.body.title, author: req.body.userId, body: req.body.body, hidden:false});
+  console.log('*******************************', req.body);
+  Blog.create({title: req.body.title, author: req.body.userId, body: req.body.body, hidden:false, imageUrl: req.body.imageUrl});
   return res.status(200).end();
 });
 

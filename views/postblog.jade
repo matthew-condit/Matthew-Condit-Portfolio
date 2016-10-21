@@ -1,0 +1,14 @@
+extend layout
+
+block content
+  .new-blog
+    
+    form(action="/blog/postblog", method="post", enctype="multipart/form-data")
+      h1 New Blog Post
+      label(for='title') Title 
+      input(type='text', name='title').form-control
+      label(for='blogImage') Image to include with Post
+      input(type="file", name='blogImage' accept='image/*').form-control
+      label(for='body') Your Article (Text Are is resizable)
+      textarea#mytextarea(name='bodyInput').form-control
+      input(type='submit' value='submit').btn.btn-primary

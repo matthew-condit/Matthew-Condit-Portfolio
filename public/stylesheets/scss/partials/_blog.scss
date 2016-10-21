@@ -1,14 +1,84 @@
 /* Blog Stylings */
 .blog-container {
-  background-color: #dddddd;
+  background-color: #f6f6f6;
   min-height: 50vh;
+  width: 100%;
 }
 
+//.masonry { /* Masonry container */
+//    column-count: 5;
+//    column-gap: 10px;
+//    padding-bottom: 50px;
+//}
+//
+//.grid-item { /* Masonry bricks or child elements */
+//    padding: 20px; 
+//    margin: 0;
+//    float: left; 
+//    top-margin: 20px; 
+//    bottom-margin: 20px;
+//    img {
+//  /* Just in case there are inline attributes */
+//      width: 100% !important;
+//      height: auto !important;
+//  }
+//}
 .blog {
-  text-align: left;
-  padding: 15px;
-  margin: 25px;
-  background-color: white;
+  background-color: transparent;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.blog-container {
+  padding: 20px;
+  padding-bottom: 100px;
+  margin-bottom:0;
+}
+
+
+.come-in {
+  transform: translateY(400px);
+  animation: come-in 2s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 1.4s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+.blog-header {
+  border-radius: 5px;
+  display: inline-block;
+  float: left;
+  transition: all .5s ease-in-out;
+  min-height: 400px;
+  background: white;
+  margin-right: 10px;
+  margin-bottom:50px;
+  @media screen and (max-width: 2000px) { width: 19%;}
+  @media screen and (max-width: 1130px) { width: 30%;}
+  @media screen and (max-width: 900px) { width: 46%;}
+  @media screen and (max-width: 600px) { width: 90%;}
+  * {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  h2 {
+    margin-top: 10px;
+    padding-left: 5px;
+    font-size: 1.2em;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    font-size: .8em;
+  }
+  h4 {margin-top: 10px;
+     padding-left: 5px;
+    font-size: 1em;
+  }
   a {
     &:hover {
       text-decoration: underline;
@@ -16,15 +86,34 @@
     }
   }
   p {
-    font-family: $para-font;
-    font-size: 1.3em;
+    padding: 10px;
+    color: #666;
+    font-family: 'Hind', sans-serif !important;
+    font-size: 1em !important;
+  }
+  span {
+    padding: 10px;
+    color: #666;
+    font-family: 'Hind', sans-serif !important;
+    font-size: 1em !important;
   }
   img {
-    height: 30px;
-    display: inline-block;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 }
-
+.new-blog-header {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  h3 {
+    font-size: 8em;
+  }
+  h4 {
+    font-size: 2em;
+  }
+}
 .blog-splash {
   text-align: center;
   padding: 30px;
@@ -34,10 +123,10 @@
   height:338px;
   clip: auto;
   h1 {
-    font-family: $title-font;
-    font-size: 8em;
+    font-family: 'Playfair Display', serif;
+    font-size: 4em;
     color: white;
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 10px black;
   }
 }
 #titleInput { 

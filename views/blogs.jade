@@ -3,15 +3,16 @@ extends layout
 block content
   script(src='javascripts/blog/blog.js')
   .blog-splash 
-    h1 Blog
+    h1 Read my blog.
   .blog-container
     include ./partials/_login.jade
-    br
+    br.clear
     .blog(ng-cloak ng-app='blogApp')
       .list(ng-controller='mainCtrl')
-        .blog-header(ng-repeat='blog in blogs')
+        .blog-header.waiting(ng-repeat='blog in blogs')
           a(ng-href='/blog/{{blog._id}}')
-            img.blog-img(ng-src='/images/blog/{{blog.imageUrl}}' ng-if='blog.imageUrl !== undefined' alt='blog photo')
+            img.blog-img(ng-src='/images/uploads/{{blog.imageUrl}}' ng-if='blog.imageUrl !== undefined' alt='blog photo')
+          
             h2 {{blog.title}}
           h3: a(ng-href='/users/{{blog.author.username}}') By {{blog.author.name}}
           h3 {{blog.date | date: "MMMM d, yyyy"}}
@@ -24,5 +25,12 @@ block content
           p
             |      
             a(ng-href='/blog/{{blog._id}}' ng-bind-html='blog.preview') {{blog.preview}}
+    
+        if loggedIn
+          a(href='/blog/postblog')
+            .blog-header.new-blog-header
+              h3 +
+              h4 Write a New Blog Post 
+    br.clear
 
   

@@ -24,6 +24,7 @@ var email = require('./routes/sendEmail');
 var app = express();
 
 
+
 require('./data/database');
 //require('./data/seed');
 
@@ -45,9 +46,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
-app.use(fileUpload());
-app.use(busboy());
-app.use(multer({dest: './public/images/'}).single('photo'));
+
 
 // makes user ID available to templates
 app.use(function(req, res, next) {

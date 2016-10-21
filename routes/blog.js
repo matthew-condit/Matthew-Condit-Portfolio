@@ -1,12 +1,24 @@
 var express = require('express');
 var request = require('request');
 var mid = require('../middleware');
-var busboy = require('connect-busboy');
-var fs = require('fs');
-var multer = require('multer');
-var upload = multer({dest: '../public/images/blog'});
 var User = require('../data/models/user');
+var multer = require('multer');
+var mime = require('mime');
+//var upload = multer({dest: '/tmp/'});
+
 var router = express.Router();
+
+var storage = multer.diskStorage({
+  destination: function(req, file, callback) {
+    callback(null, './public/images/uploads');
+  }, 
+  filename: function(req, file, callback) {
+    console.log(file);
+    callback(null, file.fieldname + '-'+ Date.now() +'.'+ mime.extension(file.mimetype));
+  }
+});
+var upload = multer({storage: storage});
+
 
 /* GET all blogs page. */
 router.get('/', function(req, res, next) {;
@@ -41,11 +53,48 @@ router.get('/newblog', mid.requiresLogin, function(req, res, next) {
   }
 });
 
+/* GET post blog page. */
+router.get('/postblog', mid.requiresLogin, function(req, res, next) {
+  console.log('New Blog Router');
+  return res.render('postblog', {title: 'New Blog Post', userId: req.session.userId})
+});
+
+/* POST post blog page. */
+router.post('/postblog', upload.single('blogImage'), function(req, res, next) {
+  var title = req.body.title;
+  var body = req.body.bodyInput;
+  var imageUrl = req.file.filename;
+  request.post('http://' + req.headers.host + '/api/blog', {json: {body: body, title: title, userId: req.session.userId, imageUrl: imageUrl}},
+    function(err, httpResponse, body) {
+      if (err) { 
+        console.error('error posting blog'); 
+      } else { 
+        console.log('Blog Post successfully uploaded');
+      }
+    });
+  return res.redirect('/blog');
+});
+
+//
+///* POST saveblog router. */
+//router.post('/saveBlog', upload.single('image'),function(req, res, next) {
+//  console.log(req.body, 'Body'); 
+//  console.log(req.file, 'files');
+//  var title = req.body.titleInput;
+//  var body = req.body.bodyInput;
+//  request.post('http://' +req.headers.host + '/api/blog', {json: {body: body, title: title, userId: req.session.userId}},
+//  function(err, httpResponse, body) {
+//    if (err) {
+//      console.error('error posting blog');
+//    }
+//    console.log('Blog Post successfully uploaded');
+//  });
+//  return res.redirect('/blog');
+//});
 /* GET register page. */
 router.get('/register', function(req, res, next) {
   return res.render('register', {title: 'Register'});
 });
-
 /* POST register page. */
 router.post('/register', function(req, res, next) {
   console.log(req.body);
@@ -121,22 +170,6 @@ router.get('/logout', function(req, res, next) {
       }
     })
   }
-});
-
-/* POST saveblog router. */
-router.post('/saveBlog', upload.single('image'),function(req, res, next) {
-  console.log(req.body, 'Body'); 
-  console.log(req.file, 'files');
-  var title = req.body.titleInput;
-  var body = req.body.bodyInput;
-  request.post('http://' +req.headers.host + '/api/blog', {json: {body: body, title: title, userId: req.session.userId}},
-  function(err, httpResponse, body) {
-    if (err) {
-      console.error('error posting blog');
-    }
-    console.log('Blog Post successfully uploaded');
-  });
-  return res.redirect('/blog');
 });
 
 
