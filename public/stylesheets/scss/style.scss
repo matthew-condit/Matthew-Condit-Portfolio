@@ -6,7 +6,7 @@ $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
 body{
-  background-color: black; 
+  background-color: white; 
   min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -44,3 +44,4 @@ a {
 @import './partials/login';
 @import './partials/loginpartial';
 @import './partials/error';
+@import './partials/nature';

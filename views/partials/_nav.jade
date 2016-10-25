@@ -1,23 +1,22 @@
-//- .nav
-//-   .row
-//-     span.nav-item.col-md-3.col-sm-3.col-xs-6 
-//-       a(href='./') Home
-//-     span.nav-item.col-md-3.col-sm-3.col-xs-6 
-//-       a(href='./About') About Me
-//-     span.nav-item.col-md-3.col-sm-3.col-xs-6 
-//-       a(href='./Resume') Resume
-//-     span.nav-item.col-md-3.col-sm-3.col-xs-6 
-//-       a(href='./Works') Projects  
-.navbar.navbar-inverse.navbar-static-top
+nav.navbar.navbar-inverse.navbar-static-top
   .container-fluid
-    ul.nav.navbar-nav
-      li
-        a(href='/') Home
-      li
-        a(href='/About') About 
-      li
-        a(href='/Resume') Resume
-      li 
-        a(href='/Works') Portfolio
-      li 
-        a(href='/Blog') Blog
+    .navbar-header
+      button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".myNavbar")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+    .collapse.navbar-collapse.myNavBar
+      ul.nav.navbar-nav
+        li
+          a(href='/') Home
+        li
+          a(href='/About') About 
+        li
+          a(href='/Resume') Resume
+        li 
+          a(href='/Works') Portfolio
+        li 
+          a(href='/Blog') Blog
+      ul.nav.navbar-nav.navbar-right
+        li 
+          a(href='/') Matthew Condit Web Development

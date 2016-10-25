@@ -1,8 +1,13 @@
 /* Nav Partial Styles */
+
+// FUTURE: Make this not bootstrap, it's annoying as hell 
 .nav * {
   font-weight: 700;
-
+  font-family: 'Poppins', sans-serif;
+  color: #f6f6f6 !important;
+  text-transform: uppercase;
 }
+
 .navbar {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }

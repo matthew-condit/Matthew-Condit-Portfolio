@@ -8,23 +8,24 @@ block content
     include ./partials/_login.jade
     br.clear
     .blog(ng-cloak ng-app='blogApp')
-      .list(ng-controller='mainCtrl')
-        .blog-header.waiting(ng-repeat='blog in blogs')
+      .list.grid(ng-controller='mainCtrl')
+        .blog-header.grid-item.waiting(ng-repeat='blog in blogs')
           a(ng-href='/blog/{{blog._id}}')
             img.blog-img(ng-src='/images/uploads/{{blog.imageUrl}}' ng-if='blog.imageUrl !== undefined' alt='blog photo')
-          
-            h2 {{blog.title}}
-          h3: a(ng-href='/users/{{blog.author.username}}') By {{blog.author.name}}
-          h3 {{blog.date | date: "MMMM d, yyyy"}}
+            
+            h2(ng-if='blog.title !==""') {{blog.title}}
+          h3(ng-if='blog.title !==""'): a(ng-href='/users/{{blog.author.username}}') By {{blog.author.name}}
+          h3 {{blog.date | date: "h:mm a MMMM d, yyyy"}}
           if admin
             button(ng-click='delete(blog)') Delete
           if loggedIn
-            button(ng-click='like(blog)') Like
+            img.likes(src='/images/res/star.png'  ng-click='like(blog)')
+            //img.likes(src='/images/res/stared.png')
 
-          h4 {{blog.likes.length}} likes
-          p
-            |      
-            a(ng-href='/blog/{{blog._id}}' ng-bind-html='blog.preview') {{blog.preview}}
+          h4(ng-if='blog.title !== ""') {{blog.likes.length}} likes
+          p(ng-if='blog.title !== ""')
+            | 
+            a(ng-if='blog.title !== ""' ng-href='/blog/{{blog._id}}' ng-bind-html='blog.preview') {{blog.preview}}
     
         if loggedIn
           a(href='/blog/postblog')

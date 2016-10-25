@@ -1,13 +1,23 @@
 extends layout 
 
 block content
-  .single-blog
+  .single-blog-container
     script(src='../javascripts/blog/blog.js')
+    br.clear10px
     a(href="/blog"): p ← Go back to all blogs
     .row
-      .col-md-6.col-md-offset-3(ng-cloak ng-app='singleBlogApp')
+      .single-blog.col-xs-10.col-xs-offset-1.col-md-6.col-md-offset-3(ng-cloak ng-app='singleBlogApp')
         .div(ng-controller='blogCtrl')
-          h1 {{blog.title}}
-          h3 Written by {{author.name}} on {{blog.date | date: "EEEE, MMMM d yyyy"}}
-          h6 {{blog.likes.length}} likes
-          p.blog-body(ng-bind-html='blogHTML') didn't work
+          .blog-title
+            img(ng-src='/images/uploads/{{blog.imageUrl}}' ng-if='blog.imageUrl !== undefined')
+            h1: span {{blog.title}}
+            br.clear
+          br.clear
+          .blog-text
+            h3 Written by {{author.name}} at  {{blog.date | date: "h:mm a MMMM d, yyyy"}}
+            if loggedIn
+              img.likes(src='/images/res/star.png'  ng-click='like(blog)')
+              //img.likes(src='/images/res/stared.png')
+            h6 {{blog.likes.length}} likes
+            br
+            p.blog-body(ng-bind-html='blogHTML') didn't work

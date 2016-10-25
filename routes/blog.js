@@ -25,13 +25,12 @@ router.get('/', function(req, res, next) {;
   if (req.session.userId) {
     User.findById(req.session.userId)
       .exec(function(error, user) {
-        console.log(user);
         if (error) {
           return next(error);
         }
         else {
           var userObject = user.toObject();
-          return res.render('blogs', {title: 'Blogs', name: userObject.name, admin: userObject.admin, loggedIn: true});
+          return res.render('blogs', {title: 'Blogs', name: userObject.name, id: userObject._id, admin: userObject.admin, loggedIn: true});
         }
       })
   } 

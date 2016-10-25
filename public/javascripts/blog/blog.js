@@ -34,6 +34,7 @@ app.controller('mainCtrl',function($scope, $http, $sce, $filter) {
 
   $scope.like = function ( blog ) {
     $http.post('../api/like/' + blog._id).then(function(response){
+      blog.liked = true;
       $scope.refresh(function() {});
     });
   };
