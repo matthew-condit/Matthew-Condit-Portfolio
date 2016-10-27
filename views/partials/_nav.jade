@@ -1,22 +1,22 @@
 nav.navbar.navbar-inverse.navbar-static-top
   .container-fluid
     .navbar-header
-      button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".myNavbar")
+      button.navbar-toggle(type="button" data-toggle="collapse" data-target=".myNavbar")
             span.icon-bar
             span.icon-bar
             span.icon-bar
     .collapse.navbar-collapse.myNavBar
       ul.nav.navbar-nav
         li
-          a(href='/') Home
+          a(href='/', class=(title === 'Home' ? 'active' : '')) Home
         li
-          a(href='/About') About 
+          a(href='/About', class=(title === 'About Me' ? 'active' : '')) About 
         li
-          a(href='/Resume') Resume
+          a(href='/Resume', class=(title === 'Resume' ? 'active' : '')) Resume
         li 
-          a(href='/Works') Portfolio
+          a(href='/Works', class=(title === 'My Portfolio' ? 'active' : '')) Portfolio
         li 
-          a(href='/Blog') Blog
+          a(href='/Blog', class=(title === 'My Blog' ? 'active' : '')) Blog
       ul.nav.navbar-nav.navbar-right
         li 
           a(href='/') Matthew Condit Web Development
