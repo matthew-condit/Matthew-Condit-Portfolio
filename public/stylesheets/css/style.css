@@ -29,8 +29,18 @@ a {
   color: #f6f6f6 !important;
   text-transform: uppercase; }
 
+.nav a {
+  background-color: #222; }
+  .nav a:hover {
+    background-color: #161616 !important; }
+
+.show-nav {
+  display: block; }
+
 .active {
   background-color: #333; }
+  .active:hover {
+    background-color: #333 !important; }
 
 .navbar {
   margin-bottom: 0 !important; }
@@ -75,44 +85,38 @@ a {
     .contact-wrapper .contact #description {
       height: 150px;
       margin-bottom: 20px; }
+    @media screen and (max-width: 700px) {
+      .contact-wrapper .contact {
+        width: 90%; } }
 
 .resume {
   width: 80%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px;
   font-family: "Nobile", sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+  font-size: 16px; }
+  @media screen and (max-width: 900px) {
+    .resume {
+      font-size: 12px; } }
+  @media screen and (max-width: 500px) {
+    .resume {
+      font-size: 10px; } }
   .resume h1 {
-    font-size: 80px; }
+    font-size: 5em; }
   .resume h2 {
-    font-size: 50px; }
+    font-size: 3em; }
   .resume h3 {
-    font-size: 40px; }
+    font-size: 2.5em; }
   .resume h4 {
-    font-size: 30px; }
+    font-size: 2em; }
   .resume h5 {
-    font-size: 24px; }
+    font-size: 1.5em; }
   .resume p {
-    font-size: 20px; }
+    font-size: 1.25em; }
+  .resume .email {
+    font-size: 1.5em; }
 
-@media screen and (max-width: 900px) {
-  h1 {
-    font-size: 80px; }
-
-  h2 {
-    font-size: 50px; }
-
-  h3 {
-    font-size: 40px; }
-
-  h4 {
-    font-size: 30px; }
-
-  h5 {
-    font-size: 24px; }
-
-  p {
-    font-size: 20px; } }
 .resume-wrapper {
   background-color: #f6f6f6; }
 
@@ -306,12 +310,15 @@ a {
   background-color: #f6f6f6; }
   .works h2 {
     font-size: 40px; }
+    @media screen and (max-width: 600px) {
+      .works h2 {
+        font-size: 30px; } }
   .works iframe {
     height: 400px;
     width: 40%; }
 
 .work {
-  margin-top: 80px;
+  margin-top: 30px;
   padding: 30px; }
   .work img {
     width: 100%;
@@ -321,7 +328,8 @@ a {
 .footer {
   margin-bottom: 0;
   border-radius: 0;
-  color: #ddd; }
+  color: #ddd;
+  z-index: 1; }
   .footer p {
     margin: 10px;
     font-family: "Nobile", sans-serif;
@@ -332,17 +340,27 @@ a {
   min-height: 90vh;
   padding: 50px;
   text-align: center; }
-  .countdown h1, .countdown h3 {
+  .countdown h1,
+  .countdown h3 {
     font-family: "Nobile", sans-serif;
     font-size: 50px;
     color: #c62b1a; }
+    @media screen and (max-width: 700px) {
+      .countdown h1,
+      .countdown h3 {
+        font-size: 30px; } }
   .countdown img {
     padding: 50px; }
+    @media screen and (max-width: 700px) {
+      .countdown img {
+        padding: 0; } }
   .countdown fieldset {
     margin: 0 auto;
     width: auto;
     text-align: center; }
-    .countdown fieldset input, .countdown fieldset label, .countdown fieldset button {
+    .countdown fieldset input,
+    .countdown fieldset label,
+    .countdown fieldset button {
       margin: 3px auto;
       font-family: "Nobile", sans-serif;
       padding: 5px;
@@ -363,10 +381,17 @@ a {
   border: 2px solid #ddd;
   border-radius: 10px;
   color: #c62b1a; }
+  @media screen and (max-width: 700px) {
+    .count {
+      width: 70px;
+      padding: 4px; } }
 
 .num {
   font-size: 100px;
   font-family: "Nobile", sans-serif; }
+  @media screen and (max-width: 700px) {
+    .num {
+      font-size: 40px; } }
 
 .weather {
   /* HTML5 display-role reset for older browsers */
@@ -472,7 +497,7 @@ a {
 
 /* Blog Stylings */
 .blog-container {
-  background-color: #f6f6f6;
+  background-color: #e0e0f0;
   min-height: 50vh;
   width: 100%;
   padding-bottom: 200px;
@@ -528,7 +553,7 @@ a {
     -moz-column-count: auto;
     column-count: auto; } }
 .blog-header {
-  border-radius: 5px;
+  border-radius: 2px;
   transition: all .5s ease-in-out;
   background: white; }
   .blog-header * {
@@ -566,8 +591,8 @@ a {
     font-size: 1em !important; }
   .blog-header img {
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px; }
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; }
 
 .new-blog-header {
   text-align: center;
@@ -639,6 +664,9 @@ a {
       left: 0;
       width: 100%;
       z-index: 1; }
+      @media screen and (max-width: 810px) {
+        .single-blog .blog-title h1 {
+          bottom: 20px; } }
       .single-blog .blog-title h1 span {
         color: white;
         font-weight: 700;
@@ -649,8 +677,15 @@ a {
         /* fallback color */
         background: rgba(0, 0, 0, 0.7);
         padding: 10px; }
+        @media screen and (max-width: 810px) {
+          .single-blog .blog-title h1 span {
+            font-size: .75em;
+            line-height: 1.9; } }
   .single-blog p {
     font-size: 1.5em; }
+    @media screen and (max-width: 810px) {
+      .single-blog p {
+        font-size: 1em; } }
 
 /* Login and Register Partials */
 .register, .login {
@@ -680,10 +715,13 @@ a {
   .login-partial p {
     display: inline-block;
     float: right;
-    margin: 20px;
+    padding: 20px;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #888; }
+    .login-partial p:hover {
+      background-color: #ddd; }
 
 .error-page {
   min-height: 90vh;
@@ -704,31 +742,28 @@ a {
 
 .nature {
   text-align: center; }
-  .nature .nature-content {
-    padding: 10%;
-    margin: 0;
-    height: 100vh; }
-    .nature .nature-content h1 {
-      color: white;
-      font-size: 8em;
-      font-family: 'Dancing Script', cursive; }
-      @media screen and (max-width: 500px) {
-        .nature .nature-content h1 {
-          font-size: 6em; } }
-
-.design-examples {
-  padding: 50px;
-  margin-top: -50px;
-  background-color: cornflowerblue;
-  z-index: 2; }
-  .design-examples h1 {
+  .nature h1 {
     color: white;
     font-size: 8em;
     font-family: 'Dancing Script', cursive; }
-  .design-examples .d-ex {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: justify;
-    margin-right: 5%; }
+    @media screen and (max-width: 500px) {
+      .nature h1 {
+        font-size: 4em; } }
+  .nature .nature-splash {
+    padding-top: 80px;
+    height: 100vh; }
+  .nature .design-examples {
+    margin-top: -50px;
+    padding: 20px;
+    background-color: white; }
+    .nature .design-examples h1 {
+      color: dodgerblue; }
+    .nature .design-examples .d-ex {
+      padding: 20px; }
+      .nature .design-examples .d-ex .d-ex-content {
+        background-color: dodgerblue;
+        padding: 20px; }
+        .nature .design-examples .d-ex .d-ex-content p {
+          font-size: 1.5em; }
 
 /*# sourceMappingURL=style.css.map */

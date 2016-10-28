@@ -1,25 +1,29 @@
 /* Login Partial Stylings */
+
 .login-partial {
   text-align: center;
   background-color: white;
   clear: left;
   display: block;
   h2 {
-    display: inline-block; 
+    display: inline-block;
     float: left;
     font-size: 1em;
     margin: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #888;
-    
   }
   p {
     display: inline-block;
     float: right;
-    margin: 20px;
+    padding: 20px;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: #888;
+    &:hover {
+      background-color: #ddd;
+    }
   }
 }

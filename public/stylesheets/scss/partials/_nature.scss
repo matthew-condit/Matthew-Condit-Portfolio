@@ -1,35 +1,33 @@
 .nature {
   text-align: center;
-  .nature-content {
-    padding: 10%;
-    margin: 0;
-    height: 100vh;
-    h1 {
-      color: white;
-      font-size: 8em;
-      font-family: 'Dancing Script', cursive;
-      @media screen and (max-width: 500px) {
-        font-size: 6em;
-      }
-    }
-  }
-}
-
-// TODO: add to design examples page
-.design-examples {
-  padding: 50px;
-  margin-top: -50px;
-  background-color: cornflowerblue;
-  z-index: 2;
   h1 {
     color: white;
     font-size: 8em;
     font-family: 'Dancing Script', cursive;
+    @media screen and (max-width: 500px) {
+      font-size: 4em;
+    }
   }
-  .d-ex {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: justify;
-    margin-right: 5%;
+  .nature-splash {
+    padding-top: 80px;
+    height: 100vh;
+  }
+  .design-examples {
+    margin-top: -50px;
+    padding: 20px;
+    background-color: white;
+    h1 {
+      color: dodgerblue;
+    }
+    .d-ex {
+      padding: 20px;
+      .d-ex-content {
+        background-color: dodgerblue;
+        padding: 20px;
+        p {
+          font-size: 1.5em;
+        }
+      }
+    }
   }
 }

@@ -1,45 +1,48 @@
 $highlight-color:lighten(#992114, 10%);
-
 .countdown {
-    background-color: lighten( #1A3112, 10%);
-    min-height: 90vh;
+  background-color: lighten( #1A3112, 10%);
+  min-height: 90vh;
+  padding: 50px;
+  text-align: center;
+  h1,
+  h3 {
+    font-family: $title-font;
+    font-size: 50px;
+    color: $highlight-color;
+    @media screen and (max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+  img {
     padding: 50px;
+    @media screen and (max-width: 700px) {
+      padding: 0;
+    }
+  }
+  fieldset {
+    margin: 0 auto;
+    width: auto;
     text-align: center;
-    h1, h3 {
-        font-family: $title-font;
-        font-size: 50px;
-        color: $highlight-color;
+    input,
+    label,
+    button {
+      margin: 3px auto;
+      font-family: $title-font;
+      padding: 5px;
+      font-size: 1.2em;
+      color: $highlight-color;
     }
-    img {
-      padding: 50px;
+    input {
+      width: 220px;
     }
-    fieldset {
-      margin: 0 auto;
-      width: auto;
-      text-align: center;
-      input, label, button {
-        margin: 3px auto;
-        font-family: $title-font;
-        padding:5px;
-        font-size: 1.2em;
-        color:$highlight-color;
-      }
-      input {
-        width: 220px;
-      }
-      button {
-        color: #333;
-        background-color: #ddd;
-      }
+    button {
+      color: #333;
+      background-color: #ddd;
     }
-
+  }
 }
 
-
-
-#clockdiv {
-
-}
+#clockdiv {}
 
 .count {
   font-family: $title-font;
@@ -50,9 +53,16 @@ $highlight-color:lighten(#992114, 10%);
   border: 2px solid #ddd;
   border-radius: 10px;
   color: $highlight-color;
+  @media screen and (max-width: 700px) {
+    width: 70px;
+    padding: 4px;
+  }
 }
 
 .num {
-    font-size: 100px;
-    font-family: $title-font;
+  font-size: 100px;
+  font-family: $title-font;
+  @media screen and (max-width: 700px) {
+    font-size: 40px;
+  }
 }

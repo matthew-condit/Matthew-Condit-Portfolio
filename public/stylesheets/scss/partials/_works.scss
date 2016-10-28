@@ -1,20 +1,25 @@
 .works {
-    font-family: $title-font;
-    font-weight: 700;
-    background-color: #f6f6f6;
-    h2 {font-size:40px;}
-    p  {}
-    iframe {
-        height: 400px;
-        width: 40%;
+  font-family: $title-font;
+  font-weight: 700;
+  background-color: #f6f6f6;
+  h2 {
+    font-size: 40px;
+    @media screen and (max-width: 600px) {
+      font-size: 30px;
     }
+  }
+  p {}
+  iframe {
+    height: 400px;
+    width: 40%;
+  }
 }
 
 .work {
-    margin-top: 80px;
-    padding: 30px;
-    img {
-      width: 100%;
-        border: 2px solid black;
-    }
+  margin-top: 30px;
+  padding: 30px;
+  img {
+    width: 100%;
+    border: 2px solid black;
+  }
 }
