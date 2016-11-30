@@ -45,19 +45,41 @@ a {
 .navbar {
   margin-bottom: 0 !important; }
 
+.collapse-header {
+  float: left;
+  color: white;
+  font-size: 15px;
+  margin-left: 20px;
+  border: none; }
+
 /* Intro div stylings */
 .intro {
   background-color: #f6f6f6;
-  margin: 0; }
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; }
+  @media screen and (max-width: 770px) {
+    .intro {
+      flex-direction: column-reverse; } }
   .intro .intro-content {
-    padding: 20px; }
+    padding: 6%;
+    flex-basis: content;
+    flex-grow: 1; }
     .intro .intro-content h1 {
       font-family: "Nobile", sans-serif; }
+      @media screen and (max-width: 420px) {
+        .intro .intro-content h1 {
+          font-size: 1.8em; } }
     .intro .intro-content p {
       font-family: "Roboto Slab", serif;
       font-size: 20px; }
+    .intro .intro-content .intro-content-p {
+      width: 80%;
+      margin: 0 auto; }
   .intro .intro-sidebar {
-    padding: 0; }
+    align-self: flex-end;
+    padding: 0;
+    bottom: 0; }
   .intro .intro-pic {
     width: 100%;
     background-color: #f6f6f6;
@@ -251,6 +273,7 @@ a {
       border-width: 8px 16px 8px 0;
       border-color: transparent #F45B69 transparent transparent; } }
 .arrow {
+  z-index: 0;
   position: fixed;
   bottom: 0;
   left: 50%; }
@@ -325,15 +348,17 @@ a {
     border: 2px solid black; }
 
 /* Contact footer Partial Style */
-.footer {
-  margin-bottom: 0;
-  border-radius: 0;
-  color: #ddd;
-  z-index: 1; }
-  .footer p {
-    margin: 10px;
-    font-family: "Nobile", sans-serif;
-    font-size: .8em; }
+.footer-container {
+  background-color: #333;
+  color: #aaa;
+  padding: 40px; }
+  .footer-container .footer {
+    text-align: center; }
+    .footer-container .footer a {
+      text-decoration: underline;
+      margin: 10px 10px; }
+      .footer-container .footer a:hover {
+        color: #ccc; }
 
 .countdown {
   background-color: #2e5620;

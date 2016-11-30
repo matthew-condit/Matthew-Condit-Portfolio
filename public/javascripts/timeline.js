@@ -1,4 +1,3 @@
-
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
@@ -17,6 +16,9 @@ function callbackFunc() {
     if (isElementInViewport(items[i])) {
       items[i].classList.add("in-view");
     }
+  }
+  if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+    $('.arrow').hide();
   }
 }
 

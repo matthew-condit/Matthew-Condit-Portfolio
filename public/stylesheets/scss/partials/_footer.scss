@@ -1,13 +1,17 @@
 /* Contact footer Partial Style */
 
-.footer {
-  margin-bottom: 0;
-  border-radius: 0;
-  color: #ddd;
-  z-index: 1;
-  p {
-    margin: 10px;
-    font-family: $title-font;
-    font-size: .8em;
+.footer-container {
+  background-color: #333;
+  color: #aaa;
+  padding: 40px;
+  .footer {
+    text-align: center;
+    a {
+      text-decoration: underline;
+      margin: 10px 10px;
+      &:hover{
+        color: #ccc;
+      }
+    }
   }
 }

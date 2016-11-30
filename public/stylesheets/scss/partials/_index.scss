@@ -2,18 +2,35 @@
 .intro {
   background-color: #f6f6f6;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 770px) {
+    flex-direction: column-reverse;
+  }
   .intro-content{
-    padding: 20px;
+    padding: 6%;
+    flex-basis: content;
+    flex-grow: 1;
     h1 {
       font-family: $title-font;
+      @media screen and (max-width: 420px) {
+        font-size: 1.8em;
+      }
     }
     p {
       font-family: $para-font;
       font-size: 20px;
     }
+    .intro-content-p {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
   .intro-sidebar {
+    align-self: flex-end;
     padding: 0;
+    bottom: 0;
+
   }
   .intro-pic {
     width: 100%;
