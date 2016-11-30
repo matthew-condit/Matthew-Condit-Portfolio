@@ -1,0 +1,21 @@
+extend layout 
+
+block content
+  script(src='../javascripts/radio/main.js')
+  .radio(ng-app='myApp' ng-cloak)
+    .radio-controller(ng-controller='PlayerController')
+      .now-playing.col-xs-12.col-md-4(ng-controller='RelatedController')
+        button.btn.btn-success(ng-click='player.resume()' ng-show='!player.playing') Play
+        button.btn.btn-warning(ng-click='player.stop()' ng-show='player.playing') Stop
+        h2 Related content
+        ul#related 
+          li(ng-repeat='s in related')
+            a(ng-href='{{s.link}}' target='_blank')
+              p {{s.caption}}
+      .content-list.col-xs-12.col-md-8
+        h2 Browse 
+        ul#programs_list
+          li.nprLiItem(ng-repeat='program in programs' ng-click ='play(program)')
+            span(npr-link ng-model='program' player='player')
+      .clear
+    .clear
