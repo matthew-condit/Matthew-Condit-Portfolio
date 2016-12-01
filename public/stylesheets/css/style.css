@@ -74,14 +74,15 @@ a {
       font-family: "Roboto Slab", serif;
       font-size: 20px; }
     .intro .intro-content .intro-content-p {
-      width: 80%;
-      margin: 0 auto; }
+      width: 80%; }
   .intro .intro-sidebar {
     align-self: flex-end;
     padding: 0;
-    bottom: 0; }
+    bottom: 0;
+    flex-shrink: 1; }
   .intro .intro-pic {
     width: 100%;
+    max-width: 430px;
     background-color: #f6f6f6;
     padding: 0; }
 
@@ -89,9 +90,11 @@ a {
   padding: 20px;
   background-color: #ddd; }
   .skills ul {
-    list-style-type: none; }
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
     .skills ul li {
-      display: inline-block;
       border: 4px solid #5C97BF;
       border-radius: 4px;
       padding: 20px;
@@ -100,7 +103,8 @@ a {
 
 .contact-wrapper {
   background-color: white;
-  padding: 20px; }
+  padding: 40px;
+  padding-bottom: 100px; }
   .contact-wrapper .contact {
     width: 60%;
     margin: 0 auto; }
