@@ -42,6 +42,11 @@ router.get('/nature', function (req, res, next) {
   });
 });
 
+router.get('/draw', function (req, res, next) {
+  res.render('webGL', {
+    title: 'Draw Away!'
+  });
+})
 
 
 module.exports = router;

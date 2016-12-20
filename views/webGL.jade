@@ -1,0 +1,19 @@
+canvas#canvas(height='800px' width='800px')
+script(id="shader-vs" type="x-shader/x-vertex")
+    attribute vec4 coords;
+    attribute float pointSize;
+    uniform mat4 transformMatrix;
+    void main(void) {
+        gl_Position = transformMatrix * coords;
+        gl_PointSize = pointSize;
+    }
+
+
+script(id="shader-fs" type="x-shader/x-fragment")
+    precision mediump float;
+    uniform vec4 color;
+    void main(void) {
+        gl_FragColor = color;
+    }
+
+script(src="./javascripts/webGL.js")
